@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>CSS样式的优先级</title>
+	<!--内部样式-->
+	<style>
+		h1{
+			color:red;
+			font-size:50px;
+		}
+	</style>
+	<!--外部样式-->
+	<link rel="stylesheet" type="text/css" href="mytest.css"/>
+ </head>
+ <body>
+ 	<!--h1标记加粗字体变大就是浏览器默认设置的样式-->
+	<!--内联样式优先级最高-->
+    <h1 style="color:green;font-size:150px;">
+		今天是星期四
+	</h1> 
+ </body>
+</html>

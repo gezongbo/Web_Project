@@ -1,0 +1,182 @@
+			/* 标记选择器 */
+            	p{
+            		color:blue;
+        			background-color: beige;
+        			font-size:20px;
+        		}
+            	div{
+            		color:blue ;
+            		font-size:15px;
+            	}
+        	/* 类 class 选择器 */
+        		.d1{
+        			color: blue;
+            		font-size:15px;
+        		}
+        		p.d1{
+        			color: blue;
+            		font-size:15px;
+        		}
+        	/* id 选择器 */
+        		#i1{
+        			color: black;
+            		font-size:15px;
+        		}
+        	
+        	/* 选择器分组 */
+        		a,span{
+        			color: pink;
+            		font-size:15px;
+        	}
+        	/* 派生选择器 */
+        	p span{
+        		color: red;
+        	}
+        	/* 伪类选择器 */
+        	a:link{
+        		color: black;/*未访问时*/
+        	}
+        	a:visited{
+        		color: yellow;/*访问后*/        	
+        	}
+        	a:hover{
+        		color: green;/*鼠标指向时*/
+        	}
+        	a:active{
+        		color: blue;/*鼠标按下时*/
+        	}
+            /* 尺寸和大小*/
+                #i2{
+                    border: 1px solid green; /* solid 实线 */
+                    width: 500px;
+                    height: 200px;
+                    overflow: scroll;
+                    font-size: 20px;
+                }
+            /* 边框 */
+                #i3{
+                    border: 1px dotted green; /* dotted 虚线 */
+                    border-width: 2px;
+                    border-style: solid;
+                    border-color: green;
+                    font-size: 20px;
+                }
+            /* 盒子模型 */
+                #i4{
+                    width: 800px;
+                    height: 50px;
+                    border: 2px solid red;
+                    /* 内边距-简单写法 */
+                    padding: 20px 20px 20px 20px;/*上、右、下、左*/
+                    /* 内边距-单边写法 */
+                    padding-left: 20px;
+                    padding-top: 10px;
+                }
+                #i5{
+                    width: 800px;
+                    height: 50px;
+                    border: 2px solid red;
+                    
+                    /* 外间距-简单写法 */
+                    margin: 20px 20px 20px 200px;
+                    /* 外边距-单边写法 */
+                    margin-bottom: 50px;
+
+                }
+            /* 背景颜色 */
+                #i6{
+                    background-color: beige;
+                }
+            /* 背景图片 */
+                #i7{
+                    width: 400px;
+                    height: 400px;
+                    border: 20px solid beige;
+                    /*background-image: url("一起向未来.png");*/
+                    /*设置背景图片*/
+                    background-image: url("image\\1.jpg");
+                    background-repeat: repeat-y;
+                    /*设置背景图片的位置*/
+                    background-position:center;
+                    /*背景图片的固定方式*/
+                    background-attachment: scroll;
+                }
+            /*文本样式*/
+                #i8{
+                    /*设置字体*/
+                    font-family: 宋体;
+                    font-size:20px;
+                    font-weight: bold;
+                    font-style: italic; /*斜体*/
+                }
+            /*文本格式*/
+                div{
+                    color: red;
+                    border: 1px solid pink;
+                    text-align: left;
+                    text-decoration: underline;
+                    line-height: 20px;
+                    text-indent: 20px;
+                }
+                a{
+                    color: red;
+                    border: 1px solid pink;
+                    text-align: left;
+                    text-decoration: none;
+                    line-height: 20px;
+                    text-indent: 30px;
+                    display: block;
+                    cursor: crosshair;
+
+                }
+            /*浮动定位*/
+                #d2{
+                    width: 50px;
+                    height: 50px;
+                    background-color: beige;
+                    float: right;
+
+
+                }
+                #d3{
+                    width: 50px;
+                    height: 50px;
+                    background-color: green;
+                    /*float: right;*/
+                    /*清除左右浮动的影响*/
+                    clear: both;
+                    /*display: inline;*/
+
+                }
+            /*相对定位，绝对定位，固定定位*/
+                #d4{
+                    width: 50px;
+                    height: 50px;
+                    background-color: yellow;
+                    /*设置定位模式：相对定位*/
+                    position: relative;
+                    /*设置偏移量*/
+                    left:200px;
+                    top:30px;
+                    /*设置定位模式：绝对定位*/
+                    /*position: absolute;*/
+                    z-index: 3
+                }
+                #d5{
+                    width: 50px;
+                    height: 50px;
+                    background-color: pink;
+                    /*设置定位模式：固定定位*/
+                    position: fixed;
+                    /*设置偏移量*/
+                    left:200px;
+                    top:30px;
+                }
+            /*列表样式*/
+                ul li{
+                    /*list-style-type: square;*/
+                    list-style-image: url("image\\bili.png");
+                }
+                ol li{
+                    list-style-type: lower-roman;
+                }

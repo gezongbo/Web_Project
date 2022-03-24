@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>列表嵌套</title>
+	<style>
+		li{  
+			/*取消所有的列表项的符号*/
+			list-style-type:none;  
+		} 
+		a{
+			color:blue;  /*修改超链接文本的颜色*/
+			/*取消超链接的下划线*/
+			text-decoration:none;
+		}
+		ul li{
+			list-style-image:url("bb.png");
+		}
+	</style>
+ </head>
+ <body>
+	<ul>
+		<li>账户
+		    <ol>
+				<li><a href="">基本信息</a></li>
+				<li><a href="">修改密码</a></li>
+		    </ol>
+		</li>
+		<li>相册
+			<ol>
+				<li><a href="">上传照片</a></li>
+				<li><a href="">我的相册</a></li>
+		    </ol>
+		</li>
+	</ul>
+ </body>
+</html>

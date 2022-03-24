@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>运算符</title>
+	<script>
+		//算数运算符 + - * / % ++ --
+		function f1(){
+			var a1=3;
+			var a2=6;
+			//alert(a1+a2);  //3+6=9
+			a1++;
+			//alert(a1);  //4
+			//求一个三位数的百，十，个位分别是多少
+			var num=537;
+			//var bai=Math.floor(num/100);
+			var bai=parseInt(num/100);
+			alert("百位数是："+bai);
+			var shi=Math.floor(num%100/10);
+			alert("十位数是："+shi);
+			var ge=num%100%10;
+			alert("个位数是："+ge);
+		}
+		//关系运算符
+		function f2(){
+			var a=10;
+			var b=20;
+			var c="10";   
+			alert(a>b);  //false
+			alert(a==b); //false
+			//==比较数值
+			alert(a==c); //true
+			//===类型和数值
+			alert(a===c);//false
+		}
+		//逻辑运算符
+		function f3(){
+			var a=3;
+			var b=6;
+			var c=10;
+			alert(a>b && a<c);//false&&true->false
+			alert(a>b || a<c);//false||true->true
+			alert(!(a>b)); //!false->true
+		}
+		//条件运算符
+		function f4(){
+			var a=40;
+			var b=20;
+			var c=a>b?"a比b大":"b比a大"
+			alert(c);
+		}
+		//分支结构
+		function f5(){
+			//一种情况的分支结构
+			/*
+			var price=1000;
+			//如果价格满500打8折，不满500原价
+			if(price>=500){
+				price=price*0.8;
+			}
+			alert("价格为："+price);
+			*/
+			//两种情况的分支结构
+			//判断一个数为奇数还是偶数
+			/*
+			var num=6;
+			if(num%2==0){
+				alert(num+"是偶数");
+			}else{
+				alert(num+"是奇数");
+			}
+			*/
+			//多种情况的分支结构
+			//判断成绩等级
+			//90-100   A等级
+			//80-90    B等级
+			//60-80    C等级
+			//60以下   D不及格等级
+			var score=88;
+			if(score>=90 && score<=100){
+				alert("A等级");
+			}else if(score>=80 /*&& score<90*/){
+				alert("B等级");
+			}else if(score>=60 /*&& score<80*/){
+				alert("C等级");
+			}else{
+				alert("D不及格等级");
+			}
+		}
+		//分支结构-- switch...case结构
+		function f6(){
+			var score=33;  
+			score=Math.floor(score/10);
+			switch(score){
+				case 10:
+					//alert("等级A");
+					//break;
+				case 9:
+					alert("等级A");
+					break;
+				case 8:
+					alert("等级B");
+					break;
+				case 7:
+				case 6:
+					alert("等级C");
+					break;
+				default:
+				    alert("等级D不及格");
+			}
+
+		}
+		//循环结构
+		function f7(){
+			//for循环
+			/*
+			for(var i=1;i<=10;i++){
+				//alert("hello"+i);
+				//向页面写内容
+				document.write("hello"+i+"<br/>");
+			}
+			*/
+			//while循环
+			/*
+			var m=1;
+			while(m<=10){
+				document.write("你好"+m+"<br/>");
+				m++;
+			}
+			*/
+			//do...while循环
+			/*
+            var n=1;
+			do{
+				document.write("world"+n+"<br/>");
+				n++;
+			}while(n<=10);
+			*/
+			//将1-100之间所有的偶数输出
+			/*
+			for(var i=1;i<=100;i++){
+				if(i%2==0){
+					document.write(i+"<br/>");
+				}
+			}
+			*/
+			var i=1;
+			while(i<=100){
+				if(i%2==0){
+					document.write(i+"  ");
+				}
+				i++;
+			}
+
+
+
+		}
+
+	</script>
+ </head>
+ <body>
+	<input type="button" value="确定" onclick="f7();"/>
+ </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>超链接图片的标记</title>
+ </head>
+ <body>
+     <!--超链接  a -->
+	 <a href="http://www.baidu.com" target="_blank">
+	     去百度
+	 </a>
+	 <br/>
+	 <a href="https://www.ldu.edu.cn">鲁东大学</a>
+	 <br/>
+	 <a href="second1.html">点我去自己的页面</a>
+	 <hr/>
+	 <!--图片-->
+	 <img src="m.jpg" width="300" height="200" 
+	 title="这是一只可爱的小猫" border="1"/> 
+	 <hr/>
+	 <!-- 图片超链接  -->
+	 <a href="http://www.baidu.com">
+		 <img src="m.jpg" width="300" height="200"/>
+	 </a>
+	 <hr/>
+	 <!--图片热点分割技术-->
+	 <img src="n.jpg" width="600" height="400"
+	 usemap="#A" />
+	 <!--map标记进行图片热点分割-->
+	 <map name="A"> 
+	 	<!--左区域-->
+	    <area shape="rect" coords="0,0,300,400" href="http://www.baidu.com"></area>
+		<!--右区域-->
+		<!--
+		<area shape="rect" coords="300,0,600,400" href="https://www.ldu.edu.cn"></area>
+		-->
+		<!--右区域是圆形-->
+		<area shape="circle" coords="450,200,100" href="http://www.taobao.com"></area>
+     </map>
+	 <hr/>
+	 <!--返回页面的顶部-->
+     <a href="#top">点我回顶部</a>
+	 <hr/>
+	 <!--发送邮件-->
+	 <a href="mailto:232@qq.com">给我发邮件</a>
+ </body>
+</html>

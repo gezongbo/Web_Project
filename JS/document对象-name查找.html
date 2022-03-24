@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>通过name进行查找</title>
+	<script>
+		function f1(){
+			//通过name属性来查找
+			var nodes=
+			document.getElementsByName("sex");
+			//nodes也是数组，存储了查找的元素节点
+			alert(nodes.length);//2
+			alert(nodes[0].value);//man
+			alert(nodes[1].value);//woman
+		}
+	</script>
+ </head>
+ <body>
+ 	<!--关于性别的单选按钮-->
+	请选择性别：
+	男<input type="radio" name="sex" value="man"/>
+	女<input type="radio" name="sex" value="woman"/>
+	<input type="button" value="确定" onclick="f1();"/>
+ </body>  
+</html>

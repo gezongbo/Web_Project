@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>图片轮播效果</title>
+	<script type="text/javascript">
+		var num=2;
+		var timer
+		
+		function rotateFunc(){
+			var img=document.getElementById('image');
+				//img.setAttribute("src","2.jpg")
+				
+				img.src="C:\\Users\\BoBo\\Desktop\\HTML\\image\\"+num+".jpg";
+				
+				if(num<10){
+					num=num+1;
+				}
+				else{
+					num=num%10+1;
+				}
+		}
+		function startRotate(){
+			//创建周期性定时器
+			timer=window.setInterval(rotateFunc,1000);
+
+		}
+		function stopRotate(){
+			window.clearInterval(timer);
+		}
+		
+	</script>
+</head>
+<body>
+	<center><h1>图片播放</h1></center>
+	<center><img src="C:\Users\BoBo\Desktop\HTML\image\1.jpg" width="1000" height="500" id="image" onmouseover="startRotate();" onmouseout="stopRotate();"></center>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>创建、添加节点</title>
+	<script>
+		function f1(){
+			//创建新节点--本文输入框
+			var newNode=
+			document.createElement("input");
+			//创建新节点--换行
+			var brNode=document.createElement("br");
+			//设置新节点的属性
+			newNode.type="text";
+			newNode.value="Marry";
+			//将创建的新节点添加
+			//通过id找到form元素节点
+			var fm=document.getElementById("fm");
+			//在fm的末尾，先添加换行,再添加文本框
+			fm.appendChild(brNode);
+			fm.appendChild(newNode);
+			//将newNode添加到fm里面来,默认添加到
+			//fm的末尾
+
+			//创建一个新节点 --h1元素节点
+			var h1Node=document.createElement("h1");
+			h1Node.innerHTML="h1文本";
+			//找到body体中的按钮--通过id
+			var btn=document.getElementById("btn");
+			//将h1Node添加到表单fm中，添加到btn之前
+			fm.insertBefore(h1Node,btn);
+			//fm.appendChild(h1Node);
+		}
+	</script>
+ </head>
+ <body>
+	<form id="fm">
+		<input type="button" value="点我" onclick="f1();" id="btn"/>
+	</form>
+ </body>
+</html>

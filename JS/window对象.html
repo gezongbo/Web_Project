@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>window对象</title>
+   <script>
+		function f1(){
+			//window.alert("hello");
+			//window.confirm("你好");
+			//window.prompt("请输入内容");
+			//prompt("请输入内容","abc123");
+			//关闭当前浏览器窗口
+			//window.close();
+			//open方法--打开浏览器窗口
+			var openurl="http://www.baidu.com";
+			var config=
+			"width=300,height=200,left=50,top=100";
+			window.open(openurl,"bd",config);
+		}
+		//显示窗口的函数 
+		function showWin(){
+			var config="width=100,height=100";
+			mywin=window.open("","",config);
+		}
+		//移动窗口的函数
+		function moveWin(){
+			var x=Math.floor(Math.random()*1000);
+			//x的取值范围：0~1000
+			var y=Math.floor(Math.random()*500);
+			//y的取值范围：0~500
+			mywin.moveTo(x,y);//设置窗体的位置
+			mywin.focus();
+			mywin.resizeTo(300,300);
+		}
+		//关闭窗口的函数
+		function closeWin(){
+			mywin.close();//关闭窗口
+		}
+		//周期性定时器
+		var myTimer;
+		function f2(){
+		  //周期性定时器
+		  myTimer=window.setInterval(myFunc,1000);
+		  //一次性定时器
+		 // myTimer=window.setTimeout(myFunc,1000);
+		}
+		//定时器执行的函数
+		var a=11;
+		function myFunc(){
+			a--;  //a=a-1
+			document.write(a+"<br/>");
+			if(a==1){
+				document.write("开火");
+				//关闭定时器
+				window.clearInterval(myTimer);
+			}
+		}
+   </script>
+ </head>
+ <body>
+    <input type="button" value="确定" 
+	onclick="f2();"/>
+	<br/>
+	<input type="button" value="显示窗口"
+	onclick="showWin();"/>
+	<input type="button" value="移动窗口"
+	onclick="moveWin();"/>
+	<input type="button" value="关闭窗口"
+	onclick="closeWin();"/>
+ </body>
+</html>

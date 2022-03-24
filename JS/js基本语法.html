@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>JS的基本语法</title>
+	<script>
+		//变量--声明和初始化
+		function f1(){
+			//声明变量--var
+			var a;
+			var b;
+			//alert("a的值为:"+a);
+		    //初始化变量
+			var n=100;
+			var str="你好";
+			var m=3.14;
+			//alert(n+" "+str+" "+m);
+			//变量名的命名
+			//var 1n=1000;
+			//alert(1n);  //数字不能开头
+			//var n_1$aaa=1000;
+			//alert(n_1$aaa);
+
+			//number类型
+			var a1=3;
+			var a2=3.14;
+			alert(a1+" "+a2);
+			var a3=5e3;  //5*10^3
+            alert(a3);
+		}
+		//数据类型的隐式类型转换
+		function f2(){
+			//定义不同数据类型的变量
+			var s1="a";   //string类型
+			var n1=1;     //number类型
+			var b1=true;  //boolean类型
+			var b2=false;
+			//alert(s1+" "+n1+" "+b1+" "+b2);
+			//alert(typeof s1);
+			//alert(typeof n1);
+			//alert(typeof b1);
+			//运算--隐式转换
+			//alert(s1+n1);//a1  "a"+"1"="a1"
+			//alert(s1+b1);//"a"+"true"="atrue"
+			//alert(n1+b1);//1+1=2
+            //alert(b1+b2);//1+0=1
+	
+		}
+		//isNaN函数
+		/*isNaN(value) value数字-->false
+		               value不是数字-->true
+		  isNaN(Number(value))
+		     Number(value)可以转换为数字-->false
+			 Number(value)不可以转换数字NaN-->true
+		*/
+		function f3(){
+			var n1="你好";
+			//alert(Number(n1)); 
+			//NaN，n1不可以转换为number数字类型
+			//alert(isNaN(n1)); //true
+			var n2="100";
+			/*alert(Number(n2));  //100
+			alert(typeof n2);  //string
+			alert(typeof Number(n2));//number
+			alert(isNaN(n2));//false  */
+			var n3=true;
+			alert(Number(n3)); //1
+			alert(typeof n3); //boolean
+			alert(typeof Number(n3));//number
+			alert(isNaN(n3)); //false
+		}
+		//数据类型的显示转换
+		function f4(){
+			//转换为字符串类型  toString
+			var m1=3;
+			//alert(typeof m1); //number
+			var m2=m1.toString();
+			//alert(m2+" "+typeof m2);//3 string
+			//转换为数字类型
+			//var n1="aaa";
+			//var n1="100";
+			//var n1="3.14";
+			var n1=false;
+			var n2=parseInt(n1);
+			alert(n2); //NaN 100  3 NaN
+			//说明parsetInt不可以转boolean
+			//但是Number可以转boolean
+		}
+	</script>
+ </head>
+ <body>
+	<input type="button" value="确定" 
+	onclick="f4();"/>
+ </body>
+</html>

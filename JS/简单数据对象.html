@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>简单数据对象</title>
+	<script>
+		//String内置对象
+		function f1(){
+			//创建字符串对象
+			var str1="helloworld";
+			var str2=new String("hello");
+			//求字符串长度的属性xx.length
+			//alert(str1.length);//10
+			//alert(str2.length);//5
+			var str3="ABCdefG";
+			//下标    0123456
+			//大小写转换
+			//alert(str3.toUpperCase());
+			//alert(str3.toLowerCase());
+			//获取指定位置的字符
+			//alert(str3.charAt(2)); //C
+			//查询指定字符串的位置
+			var str4="helloabcworldhello";
+			//下标    0123456   10  14
+			//alert(str4.indexOf("abc")); //5  
+			//alert(str4.indexOf("e"));   //1
+            //alert(str4.indexOf("cba")); //-1
+			//alert(str4.indexOf("hello")); //0
+			//从下标6开始查找字符串hello
+			//alert(str4.indexOf("hello",6)); //13
+			//alert(str4.lastIndexOf("e"));//14
+			//alert(str4.lastIndexOf("e",10));//1
+			//获取子字符串
+			//alert(str4.substring(5));
+			//abcworldhello
+			var str5=str4.substring(5);
+			//alert(str5);
+			//alert(str4.substring(5,10));//abcwo
+			//到下标10的前一位结束
+			//替换子字符串
+			var str6="你是一个大傻子";
+			var str7=str6.replace("大傻子","***");
+			//alert(str7);
+			//拆分子字符串
+			var str8="星期一*星期二*星期三*星期四";
+			//alert(str8);
+			//星期一*星期二*星期三*星期四
+			var strArr=str8.split("*")
+			//alert(strArr);
+			//strArr  星期一,星期二,星期三,星期四
+			//下标      0     1      2      3
+			//strArr是一个数组
+			//alert(strArr[1]);//星期二  
+			
+			//String和正则表达式
+			var str9="abc123def456";
+			//要求：把数字替换为***
+			//alert(str9.replace("123","***"));
+			//abc***def456
+			//用正则表达式 g表示全局匹配
+			//alert(str9.replace(/\d/g,"*"));
+			//match方法
+			var strArr1=str9.match(/\d/g)
+			//alert(strArr1);//1,2,3,4,5,6
+			//alert(typeof strArr1);//查看类型object
+			//alert(strArr1[0]+" "+strArr1[5])
+            //search方法
+            //查看首次出现数字的下标位置
+			alert(str9.search(/\d/));//3
+		}
+		//Array内置对象	
+	    function f2(){
+			//创建数组对象	
+			var arr1=new Array(6);
+			//alert(arr1);//,,,,,
+			//alert(arr1.length);//求数组的大小6
+			//往数组中存储内容
+			arr1[0]="a";
+			arr1[1]="b";
+			arr1[5]="c";
+			//alert(arr1);//a,b,,,,c
+			//alert(arr1.length);//6
+			
+			var arr2=new Array();
+			//alert(arr2);  //无内容
+			//alert(arr2.length); //0
+			arr2[0]="a";
+			arr2[1]="b";
+			//alert(arr2);//a,b
+			//alert(arr2.length);//2
+			arr2[4]="c"
+			//alert(arr2);//a,b,,,c
+			//alert(arr2.length);//5
+
+			//静态初始化数组
+			//var arr3=[100,200,300];
+			var arr3=new Array(100,200,300);
+			//下标              0   1   2
+			alert(arr3);//100,200,300
+			alert(arr3.length);//3
+			arr3[0]=10;
+			alert(arr3);//10,200,300
+			arr3[3]=400;
+			alert(arr3);//100,200,300,400
+			arr3[6]=1000;
+			alert(arr3);//10,200,300,400,,,1000
+	    }
+		//Array对象中方法
+		function f3(){
+			var arr1=["a","b","c","d"];
+			//alert(arr1);//a,b,c,d
+			//alert(typeof arr1);//object
+			//alert(arr1.toUpperCase())
+			//toString方法
+			var strArr1=arr1.toString()
+			//alert(strArr1);//a,b,c,d
+			//alert(typeof strArr1);//string
+			//alert(strArr1.toUpperCase());
+			//join方法
+			var strArr2=arr1.join("-");
+			//alert(strArr2);//a-b-c-d
+			//alert(typeof strArr2);//string
+			//alert(arr1.join());//a,b,c,d
+
+			//concat方法
+			var a=[1,2,3];
+			var newA=a.concat(10,20,30,40);
+			//alert("原数组"+a); //1,2,3
+			//alert("新数组"+newA);
+			//1,2,3,10,20,30,40
+
+			//slice方法
+			var arr2=[10,20,30,40,50,60];
+			//下标    0   1  2  3  4  5
+			var arr3=arr2.slice(1,4);
+			//alert(arr3);//20,30,40
+			var arr4=arr2.slice(1);
+			//alert(arr4);//20,30,40,50,60
+
+			//reverse方法
+			var arr5=[32,12,111,444];
+			//alert("倒转前："+arr5);
+			//32,12,111,444
+			var arr6=arr5.reverse();
+			//alert("倒转后："+arr6);
+			//444,111,12,32
+
+			//sort方法
+			var arr7=[3,1,2,9,7];
+			//alert("排序前"+arr7);
+            var arr8=arr7.sort();
+			//alert("排序后"+arr8);
+			var arr9=[32,12,111,444];
+			alert("排序前"+arr9);
+			//var arr10=arr9.sort();
+			var arr10=arr9.sort(sortFunc);
+			alert(arr9+"  "+arr10);
+        }
+		//自定义一个函数
+		function sortFunc(a,b){   
+			//return a-b;
+			return b-a;
+		}
+
+		//Math函数
+		function f4(){
+			//圆周率
+			//alert(Math.PI);
+			//绝对值
+			//alert(Math.abs(-6));  //6
+			//返回 x，向上舍入为最接近的整数
+			//alert(Math.ceil(7.8));  //8
+			//alert(Math.ceil(7)); //7
+			//6.x->7  7->7  7.x->8
+			//返回 x，向下舍入为最接近的整数
+			//alert(Math.floor(7));  //7
+			//alert(Math.floor(7.8));//7
+			//最大值、最小值
+			//alert(Math.max(10,100,30));//100
+			//alert(Math.min(10,100,30));//10
+			//pow(x,y)  返回 x 的 y 次幂值
+			//alert(Math.pow(2,3));  //8
+			//随机数  0-1之间的随机小数
+			//alert(Math.random());
+			//0-100之间的随机整数
+			//alert(Math.floor(Math.random()*100));
+		    //开平方根
+			//alert(Math.sqrt(9));  //3
+			//round(x)  将 x 舍入为最接近的整数
+			alert(Math.round(5.1)); //5
+			alert(Math.round(5.7)); //6
+		}
+
+		//Number对象
+		function f5(){
+			//创建Number对象
+			var myNum=3.14;
+			//alert(myNum+" "+typeof myNum);
+			//3.14 number
+			var myNum1=new Number(3.14);
+			//alert(myNum1+" "+typeof myNum1);
+			//3.14 object
+			var myNum2=Number(3.14);
+			//alert(myNum2+" "+typeof myNum2);
+			//3.14 number
+			//调用Number对象中的方法
+			var strNum1=myNum1.toString();
+			//alert(strNum1+" "+typeof strNum1);
+			//3.14 string   
+			var strNum2=myNum1.toFixed(1);
+			//保留小数点后1位
+			//alert(strNum2+" "+typeof strNum2);
+			//3.1 string
+			var num=new Number(6.5);
+			var strN=num.toFixed(2); 
+			//保留小数点后2位
+			alert(strN);//6.50
+
+			//number类型也可以调用Number
+			//对象中的方法
+			var strNum3=myNum.toFixed(1);
+			alert(strNum3);  //3.1
+		}
+
+		//正则表达式对象：RegExp对象
+		function f6(){
+			//创建正则表达式对象
+			var reg1=/^\d{3,6}$/;
+			var reg2=new RegExp("^\d{3,6}$");
+			//匹配2到5位英文字母，会忽略大小写
+			var reg3=/^[a-z]{2,5}$/i;
+			//var result1=reg1.test("1003")
+			var result3=reg3.test("HELLO");
+			if(result3){
+				alert("正确");
+			}else{
+				alert("错误");
+			}
+		}
+		//Date日期对象
+		function f7(){
+			//创建Date日期对象
+			var now=new Date();
+			//alert(now);
+			//Date中的方法
+			//alert(now.getDate());  
+			//alert(now.getDay());
+			//alert(now.getFullYear());
+			//alert(now.getHours());
+			//alert(now.getMonth());
+			//alert(now.getSeconds());
+			//alert(now.getMinutes());
+			//alert(now.toString());
+			//alert(now.toLocaleString());
+			//2022/3/8 上午10:21:33
+			now.setFullYear(2021);
+			now.setMonth(5)
+			//alert(now.toLocaleString());
+
+			var d1=new Date("2000/12/10 11:11:11");
+			alert(d1.toString());
+			alert(d1.toLocaleString());
+			alert(d1.getFullYear());
+			alert(d1.getDay());
+			alert(d1.getHours());
+		}
+	</script>
+ </head>
+ <body>
+    <input type="button" value="确定" 
+	onclick="f7();"/>
+ </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>省份、城市级联下拉列表框</title>
+	<script type="text/javascript">
+		function f1(){
+            // var s1=document.getElementById("select");
+            // var option_arr=s1.options;
+            // alert(option_arr[1].value);
+            // var opn=new Option("聊城","lc");
+            // s1.add(opn);
+            // s1.appendChild(opn);
+            var cityarry=new Array();
+            cityarry.push(["济南","烟台","青岛"]);
+            cityarry.push(["石家庄","唐山"]);
+            cityarry.push(["沈阳","大连"]);
+
+		}
+		
+	</script>
+</head>
+<body>
+    请选择省份:
+	<select id="select" onchange="f1();">
+        <option value="choose">请选择</option>
+		<option value="SD">山东</option>
+		<option value="HB">河北</option>
+		<option value="LN">辽宁</option>
+	</select>
+    请选择城市：
+    <select>
+        <option value="city"></option>
+    </select>
+	
+	
+
+</body>
+</html>

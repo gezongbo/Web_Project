@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>JavaScript学习</title>
+		<!-- 设置页面中文的显示编码-->        
+    	<meta charset="UTF-8"/>
+        <!-- 使用link 设置图标-->
+        <link rel="icon" href="image\\一起向未来.png" />
+        
+         
+         <!-- 内部样式 -->
+         <style type="text/css">
+         	p{
+            		color:blue;
+        			background-color: beige;
+        			font-size:20px;
+        		}
+
+         </style>
+         <script type="text/javascript">
+         	//页面加载时执行
+         	// alert("你好！")
+         	// alert("OK!")
+         	//定义一个函数/对象(function)
+         	function fun1(){
+         		alert("Hello");
+         	}
+         	
+
+         </script>
+         <!-- 引入外部的js文件 -->
+         <script type="text/javascript" src="mytest.js">
+         </script>
+
+
+</head>
+<body>
+		<h1 align="center">JavaScript笔记</h1>
+		<h2>1.1 什么是JavaScript</h2>
+		<p>JavaScript是一种基于对象和事件驱动的解释性脚本语言</p>
+		<p>JS 是一种网页编程技术，用来向HTML页面添加交互行为，由浏览器解析执行。</p>
+		<p>JS特点:
+			<br/>(1)
+			<br/>(2)JS由浏览器解析。
+			<br/>(3)JS内置许多对象。
+			<br/>(4)适用地方:浏览器端数据计算，表单的合法验证，事件触发，显示效果制作，异步数据提交。
+			<br/>
+		</p>
+		<h2>1.2 JS使用方式</h2>
+		<h3>1.2.1 事件定义方式</h3>
+			<!-- onclick     鼠标点击事件
+			 	ondblclick  鼠标双击事件
+			 	onmouseover 鼠标进入事件
+			 	onmouseout  鼠标离开事件 -->
+			<input type="reset" name="btn1" value="click me!" onclick="alert('Hello World!');"/>
+		
+		<h3>1.2.2 嵌入式方式</h2>
+			<p>script标记写在head标记里</p>
+			<input type="reset" name="btn2" value="确定" onclick="fun1();"/>
+		<h3>1.2.3 文件调用方式</h3>
+			<input type="reset" name="btn3" value="OK" onclick="fun2();"/>
+		<h2>1.3 变量</h2>
+			<h3> 1.3.1 命名规范 </h3>
+			<ol>
+				<li>区分大小写</li>
+				<li>第一个字符必须是字母、下划线（_）或者美元符号（$）</li>
+				<li>其他字符可以是字母、下划线、美元符或数字</li>
+			</ol>
+			<input type="reset" name="btn4" value="YES" onclick="fun3();"/>
+		<h2>1.4 数据类型</h2>
+			<h3>1.4.1 基本数据类型</h3>
+				<ol>
+					<li>number 数字类型 数字(整数，小数)</li>
+					<li>string 字符串类型 字符串(“ ” ‘ ’)</li>
+					<li>boolean 布尔类型 true 或 false</li>
+				</ol>
+	
+			<h3>1.4.2 特殊类型</h3>
+				<ol>
+					<li>undefined undefined类型，变量声明未初始化，它的值就是undefined</li>
+					<li>null null类型，表示空对象，如果定义的变量将来准备保存对象，可以将变量初始化为null,在页面上获取不到对象，返回的值就是null</li>
+				</ol>
+			
+			<h3>1.4.3 复杂类型</h3>
+				<ol>
+					<li>数组(Array)</li>
+					<li>object对象(Date...)</li>
+				</ol>
+
+		    <h3>1.4.4 数据类型的隐式转换</h3>
+
+		    <h3>1.4.5 数据类型的显示转换</h3>
+
+		    <p>
+		    	<ol>
+		    		<li>toString 转换为字符串类型</li>
+		    		<li>parseInt 强制转化为整数类型；若不能转换，会返回NaN;</li>
+		    		<li>paresFloat 强制转化为浮点数；</li>
+		    	</ol>
+		    </p>
+		    <h3>1.4.6 查看数据类型</h3>
+		    	<ol>
+		    		<li>typeof 要查看的类型 :查看数据类型</li>
+		    		<li>isNaN:是数字类型，返回false,否则返回true</li>
+		    	</ol>
+		    <h2>1.5 运算符</h2>
+		    <h3>条件运算符</h3>
+				<p>==、===、>、>=、<、<=、!=、&&(而且)、||(或者)、!(否)</p>
+
+		    <h2>1.6 分支结构</h2>
+		    <h3>1.6.1 一种情况的分支结构</h3>
+		    	if(){
+
+		    }
+		    <h3>1.6.2 两种情况的分支结构</h3>
+		    	if(){
+
+		    }
+		    	else{
+
+		    }
+		    <h3>1.6.3 多种情况的分支结构</h3>
+		    	if(){
+
+		    }
+		    	else if(){
+
+		    }
+		    	else{
+
+		    }
+		    <h3>1.6.4 分支结构第二种语法</h3>
+		    <input type="reset" name="btn5" value="等级" onclick="fun4();"/>
+		
+		    switch(){
+		    	case value:
+		    		alert("");
+		    		break;
+		    	case value:
+		    		alert("");
+		    		break;
+		    	default:
+		    		alert("");
+		}
+			<h2>1.7 循环结构 </h2>
+			<h3>1.7.1 for</h3>
+				for(i=0;i&ltn;i++){
+
+			}
+			<h3>1.7.2 while</h3>
+				while(){
+
+			}
+			<h3>1.7.3 do while</h3>
+				do{
+
+			}while();
+			<h2>1.8 对象</h2>
+			<p>对象的使用:
+				<br/>对象名.属性
+			</p>
+			<h3>1.8.1 内置对象</h3>
+
+			<h3>1.8.2 自定义对象</h3>
+			<input type="reset" name="btn6" value="加法" onclick="fun5(3,5);"/>
+			<h3>1.8.3 浏览器对象</h3>
+			<p>BOM 用来访问和操作浏览器窗口</p>
+			<p>window 对象
+				window对象中的常用方法:
+				<br/> window.alert()  只带确定按钮的对话框
+				<br/> window.confirm()    确定，取消
+				<br/> window.prompt()     确定，取消，输入框。
+				<br/> window.close()   关闭浏览器的窗口
+			</p>
+
+			<h3>1.8.4 DOM对象</h3>
+			<p>文档对象模型，定义了访问和操作HTML,文档的方法</p>
+</body>
+</html>

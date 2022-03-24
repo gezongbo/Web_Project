@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>动态时钟</title>
+	<!-- 设置页面中文的显示编码-->        
+    <meta charset="UTF-8"/>
+    <style type="text/css">
+    	span{
+    		font-size: 50px;
+    		color:green;
+    	}
+    </style>
+    <script type="text/javascript">
+    	function showTime(){
+    		var now=new Date();
+    		var nowStr=now.toLocaleString();
+    		var s1=document.getElementById("s1")
+    		s1.innerHTML=nowStr;
+    	}
+    	var timer
+    	function startTime(){
+    		timer=window.setInterval(showTime,1000);//1秒调用一次showTime()
+
+    	}
+    	function stopTime(){
+    		window.clearInterval(timer);
+    	}
+    </script>
+</head>
+<body>
+	<center><h1>动态时钟</h1></center>
+	<br/><hr/>
+
+	<center><input type="button" name="btn1" value="显示时间" onclick="showTime();"></center>
+	<hr/>
+	<center><input type="button" name="btn1" value="开始时间" onclick="startTime();"></center>
+	<hr/>
+
+	<center><input type="button" name="btn1" value="停止时间" onclick="stopTime();"></center>
+	<hr/>
+
+
+	<center><span id="s1">显示时间</span></center>
+</body>
+</html>

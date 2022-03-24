@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>显示方式</title>
+	<style>
+		#d1{ 
+			/*设置隐藏，不显示*/
+			/*display:none;*/
+		}
+		img{
+			/*display:none;*/
+			/* 设置img图片由行内变为块标记特性  */
+			display:block;
+			/* 设置光标的形状 */
+			cursor:wait;
+		}
+		div{
+			/*设置div的块标记特性为行内标记特性*/
+			display:inline;
+		}
+	</style>
+ </head>
+ <body>
+	<div id="d1">我是div1标记</div>
+	<div>我是div2标记</div>
+	<div>我是div3标记</div>
+	<hr/>
+	<img src="n.jpg" width="200px" height="200px"/>
+	<input type="button" value="隐藏"/>
+ </body>
+</html>
