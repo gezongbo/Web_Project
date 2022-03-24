@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>层次关系</title>
+	<script type="text/javascript">
+		function f1(){
+			// var select=document.getElementById("select");
+			// alert(select.childNodes.length);
+			// for(var i=0;i<select.childNodes.length;i++)
+			// 	alert(select.childNodes[i].innerHTML);
+			// alert(select.previousSibling);
+			// alert(select.nextSibling);
+			var nodes=document.getElementsByName("sex")
+			var nodes1=document.getElementsByTagName("input")
+			document.createElement("input");
+			alert(nodes[0].value);
+			alert(nodes);
+		}
+		function f2(){
+			
+		}
+	</script>
+</head>
+<body>
+	<select id="select">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+	</select>
+	
+	请选择性别：
+	男<input type="radio" name="sex" value="Man"/>
+	女<input type="radio" name="sex" value="Woman"/>
+	<input type="button" value="确定" onclick="f1();"/>
+
+</body>
+</html>

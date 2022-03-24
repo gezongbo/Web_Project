@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>删除元素节点</title>
+	<script>
+		function f1(){
+			//删除div元素节点
+			//找到body体中的form节点
+			var fm=document.getElementById("fm");
+			//找到body体中的div节点
+			var dv=document.getElementById("dv");
+			//fm.removeChild(dv);
+
+			//删除超链接元素节点
+			//找到body体中的a节点
+			var link=
+			document.getElementById("link");
+			//dv.removeChild(link);
+			link.parentNode.removeChild(link);
+			//dv和link.parentNode指的是同一个
+			//元素节点，都表示div元素节点。
+		}
+	</script>
+ </head>
+ <body>
+	<form id="fm">
+		<input type="button" value="删除节点" onclick="f1();" id="btn"/>
+		<div id="dv" style="border:1px solid black;width:100px;height=70px;">
+			<a href="" id="link">点我去百度</a>
+			<p>我是一个段落标记</p>
+		</div>
+	</form>
+ </body>
+</html>

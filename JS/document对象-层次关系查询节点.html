@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>层次关系查询节点</title>
+   <script>
+		//点击确定按钮执行的函数
+		function f1(){
+			//通过层次关系来查找元素节点
+			var select1=
+			document.getElementById("select1");
+			//查询select1元素节点所有的孩子节点
+			//所有的孩子节点都放入数组中
+			//alert(select1.childNodes);
+			//[object NodeList]
+			//alert(select1.childNodes.length);//7
+			//alert(select1.childNodes[0].innerHTML);
+			//alert(select1.childNodes[1].innerHTML);
+			var cArr=select1.childNodes;
+			//使用循环查询孩子节点中所有的内容
+			for(var i=1;i<cArr.length;i=i+2){
+				//alert(cArr[i].innerHTML);
+			}
+			//通过id来查找元素节点
+			var d1=document.getElementById("d1");
+            var d2=document.getElementById("d2");
+			//alert(d1.innerHTML);
+			//alert(d2.innerHTML);
+			
+			//层次关系--查找第一个孩子
+			//alert(select1.firstChild.innerHTML);
+
+			//层次关系--同级别元素节点查找
+			/*
+		alert(select1.previousSibling
+		   .previousSibling.innerHTML);
+        alert(select1.nextSibling
+		   .nextSibling.innerHTML);
+		   */
+		   	/*
+			var a=select1.nextSibling.nextSibling;
+			a.innerHTML="去淘宝";
+			a.href="http://www.taobao.com";
+			*/
+			var a1=document.getElementById("a1");
+			a1.innerHTML="去淘宝啊";
+			a1.href="http://www.taobao.com";
+
+			//层次关系--父节点查询
+			//d1是第一个option元素节点
+			alert(d1.parentNode.getAttribute("id"));
+			//通过id的方式
+			alert(select1.getAttribute("id"));
+
+		}
+   </script>
+ </head>
+ <body>
+	<p>段落文本</p>
+	<select id="select1">
+		<option value="1" id="d1">a</option>
+        <option value="2" id="d2">b</option>
+		<option value="3" id="d3">c</option>
+	</select>
+	<a href="http://www.baidu.com" id="a1">ClickMe</a>
+	<input type="button" value="确定" 
+	onclick="f1();"/>
+ </body>
+</html>

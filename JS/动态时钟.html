@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>动态时钟</title>
+	<script>
+		//显示时间的函数
+		function showTime(){
+			//创建当前系统时间
+			var now=new Date();
+			var nowStr=now.toLocaleString();
+			//alert(nowStr)
+			//将获得的时间显示在span中
+			var s1=document.getElementById("s1");
+			s1.innerHTML=nowStr;
+		} 
+		//启动时钟的函数
+		var timer;
+		function startTime(){
+			//启动周期性定时器
+			timer=window.setInterval(showTime,1000);
+		}
+		//停止时钟的函数
+		function stopTime(){
+			window.clearInterval(timer);
+		}
+	</script>
+	<style>
+		span{
+			font-size:30px;
+			color:red;
+		}
+	</style>
+ </head>
+ <body>
+	<h2>动态时钟</h2>
+	<input type="button" value="显示时间"
+	onclick="showTime();"/>
+	<input type="button" value="启动时钟"
+	onclick="startTime();"/>
+	<input type="button" value="停止时钟"
+	onclick="stopTime();"/>
+	<br/>
+	<br/>
+	<span id="s1"></span>
+ </body>
+</html>

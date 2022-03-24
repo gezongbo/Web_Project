@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>document对象</title>
+   <script>
+		//1、元素节点的内容
+		function f1(){
+			//通过id找到body体中的元素节点
+			var d1=document.getElementById("d1");
+			//d1根据id找到的元素节点
+			//alert(d1);//[object HTMLDivElement]
+			//获取内容
+			//alert(d1.innerText);//hello
+			//alert(d1.innerHTML);//<em>hello</em>
+			//先根据id找到元素节点
+			var d2=document.getElementById("d2");
+			//alert(d2.innerText);
+			//alert(d2.innerHTML);//<em>你好</em>
+			//设置元素节点中的内容
+			d1.innerText=
+		"<h3 style='color:red'>今天是星期三</h3>";
+			d2.innerHTML=
+			"<h3 style='color:red'>3月9日</h3>";
+		}
+		//2、元素节点中的属性
+		function f2(){
+			/*
+			//(1)增加超链接的href属性
+            //根据id找到body体中的超链接元素节点
+			var a1=document.getElementById("a1");
+			//alert(a1.innerText);//点我去百度
+			//设置元素节点的属性
+			a1.setAttribute("href"
+			  ,"http://www.baidu.com");
+			a1.setAttribute("target","_blank");
+			//设置元素节点的内容
+			a1.innerText="去百度跳转"; 
+
+			//(2)设置图片的属性
+			//根据id找到图片的元素节点
+			var g1=document.getElementById("g1");
+			g1.setAttribute("src","m.jpg");
+			g1.setAttribute("width","300");
+			g1.height="200";
+			g1.title="这是一个可爱的小猫";
+			*/
+
+			/*
+			//获取元素节点的属性
+			//根据id找到按钮元素节点
+			var btn=document.getElementById("btn");
+			alert(btn.getAttribute("type"));
+			alert(btn.getAttribute("value"));
+			*/
+
+			//删除元素节点的属性
+			//将超链接的href属性删除
+			var a1=document.getElementById("a1");
+			a1.removeAttribute("href");
+		}
+
+		//3、元素节点的样式
+		function f3(){
+			//找到body体中的段落p，修改样式
+			var p1=document.getElementById("p1");
+			p1.style.color="blue";
+			p1.style.fontSize="50px";
+			p1.style.fontFamily="楷体";  
+			p1.style.textAlign="center";
+			p1.style.textDecoration="underline";
+		}
+
+		//执行字体变大的函数
+		var num=30; //字体的初始大小为30
+		function btnBig(){
+			//1、根据id找到段落元素节点
+			//2、调用style样式，修改fongSize
+			//3、字体大小的数字是变量
+			var p1=document.getElementById("p1");
+			num=num+10;
+			p1.style.fontSize=num+"px";
+		}
+		//执行字体变小的函数
+		function btnSmall(){
+			var p1=document.getElementById("p1");
+			num=num-10;
+			p1.style.fontSize=num+"px";
+		}
+		//执行图片隐藏的函数
+		function btnHid(){
+			//1、找到body体中的图片
+			//2、修改图片style样式中visibility
+			var g1=document.getElementById("g1");
+			g1.style.visibility="hidden";
+		}
+		//执行图片显示的函数
+		function btnShow(){
+			var g1=document.getElementById("g1");
+			g1.style.visibility="visible";
+		}
+		//执行图片切换的函数
+		function btnChange(){
+			var g1=document.getElementById("g1");
+			g1.setAttribute("src","n.jpg");
+		}
+   </script>
+   <style>
+		#p1{
+			color:red;
+			font-size:30px;
+		}
+   </style>
+ </head>
+ <body>
+	<div id="d1"><em>hello</em></div>
+	<div id="d2"><em>你好</em></div>
+	<a id="a1" href="http://www.baidu.com">
+	  点我去百度</a>
+	<br/>
+	<img id="g1" src="m.jpg" width="300" height="200"/>
+	<br/>
+	<p id="p1">我是一个段落标记</p>
+	<input type="button" value="点我" 
+	onclick="f3();" id="btn" />
+	<input type="button" value="变大" 
+	onclick="btnBig();"/>
+	<input type="button" value="变小" 
+	onclick="btnSmall();"/>
+	<br/>
+	<input type="button" value="显示" 
+	onclick="btnShow();"/>
+	<input type="button" value="隐藏" onclick="btnHid();"/>
+	<input type="button" value="切换" 
+	onclick="btnChange();"/>
+ </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>表单验证</title>
+	<!-- 设置页面中文的显示编码-->        
+    <meta charset="UTF-8"/>
+    <script type="text/javascript">
+    	function checkid(){
+    		//1.获取账号输入框中的内容
+  			var admin=document.getElementById("admin");
+  			//var text=admin.getAttribute("value")
+  			var text=admin.value;
+  			//2.定义正则表达式
+  			var reg=/^[a-zA-Z0-9]{1,10}$/;
+  			var result=reg.test(text);
+  			var s1=document.getElementById("s1");
+  			if(result)
+  			{
+  				//alert("格式正确！");
+  				
+  				s1.innerHTML="输入格式正确！";
+  			}
+  				
+  			else{
+  				
+  				s1.innerHTML="输入格式错误！";
+  			}
+    	}
+    	function checktel(){
+    		//1.获取账号输入框中的内容
+  			var tel=document.getElementById("tel");
+  			
+  			var tel_text=tel.value;
+  			//2.定义正则表达式
+  			var reg=/^\d{3}-\d{8}$/;
+  			var result=reg.test(tel_text);
+  			var s2=document.getElementById("s2");
+  			if(result)
+  			{
+  				//alert("格式正确！");
+  				
+  				s2.innerHTML="输入格式正确！";
+  			}
+  				
+  			else{
+  				
+  				s2.innerHTML="输入格式错误！";
+  			}
+    	}
+    	function setBck(){
+    		var admin=document.getElementById("admin");
+    		admin.style.backgroundColor="pink";
+    		var tel=document.getElementById("tel");
+    		tel.style.backgroundColor="beige";
+    	}
+    	//验证表单是否可以提交
+    	function formsubmit(){
+    		return true;
+
+    	}
+    	
+    </script>
+</head>
+<body>
+	<form>
+		管理员账号:<input type="text" name="id" id="admin" onblur="checkid();" onfocus="setBck();">
+		<span id="s1">(请输入10位数字、字母的组合)</span>
+		<br/>
+		电话:<input type="text" name="tel" id="tel" onblur="checktel();" onfocus="setBck();"  />
+		<span id="s2">(请输入格式为:123-45678123)</span>
+		<br/>
+		<input type="submit" name="btn" value="提交" onclick="return formsubmit();">
+	</form>
+</body>
+</html>

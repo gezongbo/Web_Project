@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>列表嵌套</title>
+	<!-- 设置页面中文的显示编码-->        
+    <meta charset="UTF-8"/>
+    <!-- 使用link 设置图标-->
+    
+    <style type="text/css">
+    	li{
+    		list-style-type: none;/*取消列表项符号*/
+    	
+    	}
+    	a{
+    		color: blue;
+    		background-color: beige;
+    		text-decoration-line: none;
+
+    	}
+    	ul li{
+    		list-style-image: url("C:\\Users\\BoBo\\Desktop\\HTML\\image\\bili.png");
+    	}
+    	ul li ol li{
+    		list-style-image: url("C:\\Users\\BoBo\\Desktop\\HTML\\image\\gu.png");
+    	}
+    </style>
+    <link rel="icon" href="C:\\Users\\BoBo\\Pictures\\一起向未来.png" />
+</head>
+<body>
+	<ul>
+		<li>
+			账户
+			<ol>
+				<li><a href="">基本信息</a></li>
+				<li><a href="">修改密码</a></li>
+			</ol>
+		</li>
+		
+		<li>
+			相册
+			<ol>
+				<li><a href="">上传图片</a></li>
+				<li><a href="">我的相册</a></li>
+			</ol>
+		</li>
+		
+	</ul>
+</body>
+</html>

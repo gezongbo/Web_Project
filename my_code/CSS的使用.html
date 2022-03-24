@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+    <head>    
+        <title>CSS的使用</title>
+        <!-- 设置页面中文的显示编码-->        
+        <meta charset="UTF-8"/>
+        <!-- 使用link 设置图标-->
+        <link rel="icon" href="image\\一起向未来.png" />
+        
+         
+         <!-- 内部样式 -->
+         <style type="text/css">
+         	p{
+            		color:blue;
+        			background-color: beige;
+        			font-size:20px;
+        		}
+
+         </style>
+         <!-- 外部样式 引入外部的CSS文件 -->
+         <link rel="stylesheet" type="text/css" href="mytest.css">
+    </head>
+    <body>
+          <h1>1. CSS的使用</h1>
+
+		  <h2>1.1 CSS样式的使用方式</h2>
+
+          <h3>1.1.1 内联样式</h3>
+            <p>写在开始样式中，针对单独的一个标记元素起作用</p>
+            <p>style=""属性写在开始标记中</p>
+            <ol type="I">
+          	  <li style="color: pink;background-color: green;">h1 标题标记</li>
+          	  <li>div 块容器标记</li>
+          	  <li>p 段落标记</li>
+             </ol>
+          <h3>1.1.2 内部样式</h3>
+            <p>写在HTML页面中的head标记里</p>
+            
+            
+          <h3>1.1.3 外部样式</h3>
+            <p>写在单独定义的一个以css结尾的文件中，该文件要引入</p>
+          
+
+          <h2>1.2 CSS样式的优先级</h2>
+          <ol type="I">
+          	<li>内联样式</li>
+          	<li>外部样式或者内部样式 就近原则</li>
+          	<li>浏览器默认设置样式</li>
+          </ol>
+          
+          <h2>1.3 选择器</h2>
+          <h3>1.3.1 元素选择器/标记选择器</h3>
+
+
+          <h3>1.3.2 类 class 选择器</h3>
+          
+          <div class="d1">
+          		<p class="p1" id="i1">
+          			常规用法:<br/>
+          			先在开始标记中定义class=""属性，选择器通过className()的方式调用<br/>
+          			高级用法:将标记选择器和类选择器结合使用<br/>
+          			语法:标记选择器<span style="color: red">.className{}</span>
+          		</p>
+          </div>
+          <h3>1.3.3 id 选择器</h3>
+          <p>根据id的值来查找,id保证唯一<br/>
+          	选择器通过#idName()的方式来获取
+          </p>
+
+
+          <h3>1.3.4 选择器分组</h3>
+          <p>一般将一些相同的样式作用于多个标记元素中</p>
+
+          <h3>1.3.5 派生选择器</h3>
+          <p>依据标记元素在其上下文关系定义样式</p>
+
+
+          <h3>1.3.6 伪类选择器</h3>
+          <p>针对某些标记添加特殊的效果<br/>
+          	语法:使用冒号作为分隔符，左边是选择器，右边是伪类;
+          	<br/>:link   未访问
+          	<br/>:visited  访问后
+          	<br/>:hover    鼠标指向时
+          	<br/>:active   鼠标按下时
+          </p>
+          <a href="http://www.taobao.com">淘宝网</a>
+
+
+          <h2>1.4 尺寸和边框</h2>
+          <h3>1.4.1 尺寸/大小</h3>
+          <center>
+          	<div align="left" id="i2">
+          		默认显示，即使超出尺寸，也显示全部内容；
+          		<br/>overflow:当内容溢出时如何处理
+          		<br/>visible   默认
+          		<br/>hidden    超出部分隐藏
+          		<br/>scroll    显示滚动条
+          		<br/>auto      自动适应
+          </div>
+          </center>
+          <h3>1.4.2 边框</h3>
+          <center>
+          	<div align="left" id="i3">
+          		(1)简单写法:border:width style color; 分别表示:线宽 样式 颜色；
+          		<br/>(2)单边写法：border-left/right/top/bottom:width style color
+          		<br/>(3)只设置边框的线宽:border-width
+          		<br/>(4)只设置边框的类型:border-style
+          		<br/>(5)只设置边框的颜色:border-color
+          	</div>
+          </center>
+          <h2>1.5 框模型-盒子模型(包括:外边框+边框+内边框)</h2>
+          <h3>1.5.1 内边距:内容与边框之间的距离 padding:value</h3>
+          <center><p align="left" id="i4">
+          	(1)简单写法:padding:v1 v2 v3 v4 (分别表示:top right bottom left)
+          	<br/>(2)单边写法:padding-left/right/top/bottom:value
+          	
+          </p></center>
+          <h3>1.5.2 外边距:与下一控件之间的距离</h3>
+          <p id="i5">
+          	(1)简单写法：margin: v1 v2 v3 v4 (分别表示:top right bottom left)
+          	<br/>(2)单边写法:margin-left/right/top/bottom:value
+          </p>
+
+          <h2>1.6 背景</h2>
+          <h3>1.6.1 背景相关样式</h3>
+          <h4 id="i6">(1)背景颜色</h4>
+          <p>background-color:red;</p>
+          <h4>(2)背景图片</h4>
+          <p>background-image:url("image\\1.jpg");</p>
+          <center>
+          	<p id="i7">NULL</p>
+          </center>
+          
+          <h4>(3)背景图片重复问题(可以使用background-repeat属性控制背景图片的平铺效果)</h4>
+          <p>
+          	background-repeat:repeat 默认情况下，背景图片在水平和垂直方向上重复出现，创建一种称为"墙纸"的效果
+          	<br/>background-repeat:repeat-x 仅在水平方向上重复
+          	<br/>background-repeat:repeat-y 仅在垂直方向上重复
+          	<br/>background-repeat:no-repeat 仅显示一次
+          </p>
+          <h4>(4)背景图片的位置</h4>
+          <p>
+          	background-position:x y 分别表示水平、垂直位置
+          	<br/>background-position:left、center、right、top、bottom 分别表示左边，居中，右边，上边、下边显示。
+          	
+          </p>
+          <h4>(5)背景图片的固定</h4>
+          <p>
+          	background-attachment:scroll 默认，背景图片会随着页面滚动而移动。
+          	<br/>background-attachment:fixed 固定
+          </p>
+          <h2>1.7 文本</h2>
+          <h3>1.7.1 设置字体</h3>
+          <p id="i8">
+          	font-family: 字体
+          	<br/>font-size: 字体大小
+          	<br/>font-weight:normal/bold 正常/加粗
+          </p>
+          <h3>1.7.2 设置文本格式</h3>
+          <p>
+          	文本颜色: color 
+          	<br/>文本排列(水平对齐,只能用于块标记)：text-align="left/center/right"
+          	<br/>文本修饰(下划线)：text-decoration:none/underline
+          	<br/>行高：line-height=value
+          	<br/>首行文本缩进：text-indent:value
+
+          </p>
+          <div>
+          	HELLO 
+          	<a href="www.baidu.com">百度</a>
+          </div>
+          <h2>1.8 定位</h2>
+          <h3>1.8.1 普通流定位</h3>
+          <!-- 块标记 -->
+          <p>我是p标记</p>
+          <div>我是div标记</div>
+          <!-- 行内标记 -->
+          <span>我是span标记</span>
+          <a href="www.baidu.com">我是超链接</a>
+
+          <h3>1.8.2 浮动定位</h3>
+          <h4>(1)将元素排列在普通流定位之外</h4>
+          <h4>(2)将元素浮动以后，可以向左边或者右边移动，直到碰到边框或其他浮动元素为止</h4>
+          <h4>(3)浮动定位一般实现特定的定位效果</h4>
+          <p>设置浮动float:left/center/right
+          	<br/>清除浮动clear:left/center/right
+          </p>
+
+          
+          <h3>1.8.3 相对定位，绝对定位，固定定位</h3>
+          	<P>
+          		(1)position属性:position:relative;更改定位模式为相对定位
+          		<br/>(2)偏移属性:top/bottom/left/right:value;
+          		<br/>(3)堆叠顺序:z-index:value;
+          		<p>一旦修改了元素的定位方式，则元素可能会发送堆叠。
+          			<br/>可以使用z-index属性来控制元素出现堆叠的顺序
+          			<br/>z-index属性：值为数值，数值越大表示堆叠顺序更高，即距离用户更近
+          			<br/>
+          		</p>
+          	</P>
+          <h3>1.8.4 绝对定位</h3>
+          <p>position属性:position:absolute;更改定位模式为绝对定位</p>
+          <p>对元素进行绝对定位的设置，会让该元素从普通定位流中移除，不占用空间</p>
+          	
+          	
+          <h3>1.8.5 固定定位</h3>
+          <p>position属性:position:fixed;更改定位模式为固定定位</p>
+          <p>特点:
+          	<br/>(1)固定定位会将元素从普通流定位中完全移除，不占用页面的空间
+          	<br/>(2)
+          </p>
+
+          <div id="d2">div2</div>
+          <div id="d3">div3</div>
+          <div id="d4">div4</div>
+          <div id="d5">div5</div>
+          <h2>1.8 显示方式</h2>
+          <h3>(1)设置元素的显示隐藏</h3>
+          <P>
+          	display:none
+          </P>
+          <h3>(2)设置块标记为行内标记特性</h3>
+          <P>
+          	display:inline
+          </P>
+          <h3>(3)设置行内标记为块标记特性</h3>
+          <P>
+          	display:block
+          </P>
+          <h2>1.9 列表样式</h2>
+          
+          <h3>(1)无序列表</h3>
+          <p>list-style-type: square;</p>
+          <p>none 无标记
+          	<br/> disc 实心圆，默认
+          	<br/> circle 空心圆
+          	<br/> square 实心方块
+          </p>
+          	<ul>
+          		<li>First</li>
+          		<li>Second</li>
+          		<li>Third</li>
+          	</ul>
+          <h3>(2)有序列表</h3>
+          <p>list-style-type: lower-roman;</p>
+          <p>none 无标记
+          	<br/>decimal 数字，默认
+          	<br/>lower-roman 小写罗马数字
+          	<br/>upper-roman 大写罗马数字
+          </p>
+          	<ol>
+          		<li>one</li>
+          		<li>two</li>
+          		<li>three</li>
+          	</ol>
+          <h3>(3)图片替换列表项符号</h3>
+          <p>list-style-image: url("1.jpg");</p>
+
+          <h2>1.10 关于元素隐藏</h2>
+          <h3>(1)display:none/block/inline</h3>
+          <h3>(2)visibility:hidden/visible(隐藏/显示)</h3>
+    </body>
+</html>

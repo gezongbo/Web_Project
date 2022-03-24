@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>省份、城市级联下拉框</title>
+	<script>
+		//定义数组--存储省份对应的城市
+		//山东0   济南 烟台 青岛 威海
+		//河北1   石家庄  唐山
+		//辽宁2   沈阳  大连   鞍山
+		var cityArry=new Array();
+		cityArry[0]=["济南","烟台","青岛","威海"];
+		ctiyArry[1]=["石家庄","唐山"];
+		cityArry[2]=["沈阳","大连","鞍山"];
+		//选择省份触发的函数
+		function sChange(){
+			//根据id查找省份对应下下拉框节点
+
+			//获得下拉框选项的下标
+
+
+		}
+	</script>
+ </head>
+ <body>
+	省份:<select id="s1" onchange="sChange();">
+			 <option>请选择</option>
+		     <option>山东</option>
+			 <option>河北</option>
+			 <option>辽宁</option>
+	     </select>
+    城市:<select>
+		     <option>请选择</option>
+         </select>
+ </body>
+</html>

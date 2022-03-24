@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>时间段查询</title>
+	<!-- 设置页面中文的显示编码-->        
+    <meta charset="UTF-8"/>
+    <script type="text/javascript">
+    	
+    	function getTime(days){
+    		var today=new Date();
+    		var endstr=today.toLocaleDateString();
+    		var day=today.getDate()-days+1;
+    		today.setDate(day);
+    		var startstr=today.toLocaleDateString();
+			alert("开始日期为:"+startstr+"\n"+"结束日期为:"+endstr);
+    	}
+    </script>
+</head>
+<body>
+	<center><h1>时间段查询</h1></center>
+	<br/><hr/>
+	<label for="01">三天内</label>
+    <input type="checkbox" name="time" value="three" id="01" onclick="getTime(3);" />
+    <label for="02">一周内</label>
+    <input type="checkbox" name="time" value="seven" id="02" onclick="getTime(7);"/>
+
+</body>
+</html>

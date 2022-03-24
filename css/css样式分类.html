@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>CSS的样式分类</title>
+	<!--css的内部样式写法-->
+	<style>
+		p{
+		   color:green; 
+		   background-color:#DB24D1;
+		   font-size:40px;
+		}
+		div{
+			font-family:楷体;
+			font-size:30px;
+			color:red;
+		}
+	</style>
+	<!--引入外部的CSS文件-->
+	<link rel="stylesheet" type="text/css" href="mytest.css"/>
+ </head>
+ <body>
+ 	<!--CSS的内联样式 
+	    使用style=""属性写在开始标记中
+	-->
+	<h1 style="color:red;background-color:yellow">
+		我是h1标题标记
+	</h1>
+	<div style="color:blue">我是div标记</div>
+	<p>我是段落标记</p>  
+	<p>我是段落标记1</p>
+ </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>表单</title>
+ </head>
+ <body>
+ 	<!--
+		action=""指定表单提交服务器端的地址
+		method="get/post"表单提交的方式
+		   get方式，默认的，将表单的数据通过浏览器地址栏的方式进行提交
+		   post方式，将表单的数据以协议体的方式提交
+		   在浏览器地址栏看不到提交的数据
+	-->
+	<form action="" method="post">
+		<!--
+		   name=""属性必须要加，否则表单提交时此项
+		          提交不到服务器端
+		   value=""属性
+		-->
+		用户名：<input type="text" name="username" value="aaaaa"/> 
+		<br/>
+		密码：<input type="password" name="pwd" value="abc123"/>
+		<br/>
+		请选择你的性别：  
+		<!-- checked="checked"默认被选中 -->
+		男<input type="radio" name="gender" value="man" />
+		女<input type="radio" name="gender" value="woman" checked="checked"/>
+		<br/>
+		请选择你的兴趣爱好：
+		读书<input type="checkbox" name="love" value="readbook" checked="checked"/>
+		上网<input type="checkbox" name="love" value="online"/>
+		打球<input type="checkbox" name="love" value="playball"/>
+		睡觉<input type="checkbox" name="love" value="sleep"/> 
+		<label for="t1">吃</label>
+		<input type="checkbox" name="love" value="eat" id="t1"/>
+		<br/>
+		<!--想将id=1001传到服务器端，又不想被
+		用户看到，使用隐藏域-->
+		隐藏域<input type="hidden" name="id" value="1001"/>
+		<br/>
+		上传文件：<input type="file"/>
+		<br/>
+		<input type="submit" name="smt" value="提交"/>
+		<input type="reset" name="rst" value="重置"/>
+		<input type="button" name="btn" value="确定"/>
+		<hr/>
+		<!--非input标记系列-->
+		<!--选项框-->
+        请选择城市：
+		<select name="city">
+			<option value="yt">烟台</option>
+			<option value="qd">青岛</option>
+			<option value="rz" selected="selected">
+				日照
+			</option>
+			<option value="ll">临沂</option>
+        </select>
+		<br/>
+		<!--多行文本框-->
+		<textarea cols="10" rows="5"></textarea>
+		</br>
+		<!--控件分组-->
+		<fieldset>
+			<legend>地址信息</legend>
+			地址<input type="text"/><br/>
+			邮箱<input type="text"/>
+        </fieldset>
+		<fieldset>
+			<legend>用户信息</legend>
+			用户名<input type="text"/><br/>
+			密码<input type="password"/>
+		</fieldset>
+	</form>
+ </body>
+</html>

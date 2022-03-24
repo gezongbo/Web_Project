@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>CSS选择器</title>
+	<!--内部样式-->
+	<style>
+		/* 1、标记选择器/元素选择器 */
+		div{   color:red;font-size:50px;   }
+        /* 2、类class选择器 */
+		.d1{   color:blue;font-size:80px   }
+		/*  标记选择器和类选择器结合使用 */
+		p.d1{  color:green;font-size:60px; }
+		/* 3、id选择器  */
+		#m1{  color:yellow; }
+		/* 4、选择器分组  */
+		h1,#m2,a{
+			color:red;
+			font-size:30px;
+		}
+		/* 5、派生选择器  */
+		h3 span{  color:red;   }
+	</style>
+ </head>
+ <body>
+	<div class="d1" id="m1">我是一个div标记</div>
+	<div>今天是2月24日</div>
+	<p class="d1">我是一个段落标记</p>
+	<hr/>
+	<h1>我是h1标题标记</h1>
+    <h2 id="m2">我是h2标题标记</h2>
+    <a href="http://www.baidu.com">点我去百度</a>
+	<hr/>
+	<h3>
+		一个非常<span id="s1">重要</span>的问题
+	</h3>
+	<span>其它问题</span>
+ </body>
+</html>

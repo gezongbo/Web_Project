@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>基础表单</title>
+	<!-- 设置页面中文的显示编码-->        
+    <meta charset="UTF-8"/>
+</head>
+<body>
+	<h1>增加管理员</h1>
+	<div>
+		<form action="" method="post">
+			<!--<tr>
+				<td>
+					姓名:
+				</td>
+				<td>
+					<input type="text" name="name">
+				</td>
+				<td>
+					10个字符以内
+				</td>
+			</tr><br/>
+			<tr>
+				<td>
+					密码:
+				</td>
+				<td>
+					<input type="password" name="pwd">
+				</td>
+				<td>
+					10个字符以内
+				</td>
+			</tr><br/>
+			<tr>
+				<td>
+					性别:
+				</td>
+				<td>
+					<input type="radio" name="gender"/>女士&nbsp;&nbsp;
+			<input type="radio" name="gender"/>男士
+				</td>
+				
+			</tr>-->
+			<p>姓名:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" name="name"> &nbsp;10个字符以内
+			</p>
+			<p>密码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="password" name="pwd"> &nbsp;10个字符以内
+			</p>
+			<p>性别:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="gender"/>女士&nbsp;&nbsp;
+			<input type="radio" name="gender"/>男士
+            </p>
+            <p>角色:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="checkbox" name="manage" value="Super" id="01" />
+              <label for="01">超级管理员</label>
+              <input type="checkbox" name="manage" value="Master" id="02" />
+              <label for="02">账单管理员</label>
+               至少选择一个角色
+            </p>
+            <p>头像:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            	<input type="file" name="pub_file" />
+            </p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            	<input type="submit" name="submit" value="保存"/>
+            <input type="reset" name="input" value="重填"/>
+            </p>
+              
+              
+		</form>
+	</div>
+
+
+
+	<h1>修改个人信息</h1>
+	<div>
+		<form action="" method="post">
+			<p>姓名:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" name="name" value="marry"> </p>
+			
+			<p>性别:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="gender" checked="checked" /> 女士
+			<input type="radio" name="gender"/> 男士
+		     </p>
+         
+            <p>学历:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select name="xueli">
+            	<option value="其他" selected="selected">其他</option>
+                <option value="GZ">高中</option>
+                <option value="DX">本科</option>
+                <option value="YJS">研究生</option>
+              </select>
+            </p>
+            <p>个人描述:<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            	<textarea rows="8" cols="30"></textarea>
+            </p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            	<input type="checkbox" name="null" value="NO" id="03" />
+            <label for="03">不要公开我的个人信息</label>
+            </p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" name="submit" value="保存"/>
+            <input type="reset" name="input" value="重填"/>   
+              
+		</form>
+	</div>
+
+
+</body>
+</html>

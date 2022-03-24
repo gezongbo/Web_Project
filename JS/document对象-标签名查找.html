@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>标签名查找</title>
+	<script>
+		function f1(){
+			//通过标签名查找
+			var pNodes=
+			document.getElementsByTagName("p");
+			//pNodes是找到的所有的节点，放到了
+			//数组中
+			//求pNodes数组的长度
+			//alert(pNodes.length);  //3
+			//alert(pNodes[0].innerText);
+			//alert(pNodes[1].innerHTML);
+			//alert(pNodes[2].innerHTML);
+			var p1=pNodes[0];
+			p1.style.color="red";
+			p1.innerHTML="今天是星期五";
+
+			//1、通过document调用查找的是整个body
+			//体中的元素节点
+			//2、通过d1调用查找的div中的元素节点
+
+			//通过id找到body体中的div元素节点
+			var d1=document.getElementById("d1");
+			var pp=d1.getElementsByTagName("p");
+			alert(pp.length);//2
+			alert(pp[0].innerHTML);
+			alert(pp[1].innerHTML);
+		}
+	</script>
+ </head>
+ <body>
+    <p>段落1</p>
+	<div id="d1">
+		<p>div中的段落1</p>
+		<p>div中的段落2</p>
+	</div>
+	<input type="button" value="确定" onclick="f1();"/>
+ </body>
+</html>

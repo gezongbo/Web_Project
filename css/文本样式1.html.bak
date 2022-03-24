@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>文本样式1</title>
+	<style>
+		div{
+			color:red;
+			border:1px solid red;
+			text-align:center;
+			text-decoration:underline;
+		}
+		a{
+			color:blue;
+			border:1px solid blue;
+			text-align:center;/*行内标记无效果*/
+			text-decoration:none;
+		}
+		p{
+			line-height:40px;
+			text-indent:2;
+		}
+	</style>
+ </head>
+ <body>
+	<div>我是一个div标记</div>
+	<br/>
+	<p>我是一个段落标记习近平总书记指出，让广大残疾人安居乐业、衣食无忧，过上幸福美好的生活，是我们党全心全意为人民服务宗旨的重要体现，是我国社会主义制度的必然要求。我国将进一步发展残疾人事业，促进残疾人全面发展和共同富裕。各地各部门出台多项措施，从提升残疾人康复质量、帮扶城乡残疾人就业创业、提供无障碍环境等多方面发力，积极开创残疾人事业发展的新局面。</p>
+	<br/>
+	<a href="">我是一个超链接标记</a>
+ </body>
+</html>

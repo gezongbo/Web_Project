@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>表单验证</title>
+   <script>
+		//管理员账号的验证
+		function checkId(){
+			//1、获取账号输入框中输入的内容
+			//2、定义合适的正则表达式,对内容进行验证
+			//3、根据验证的结果在span中显示提示结果
+			//通过id找到元素节点
+			var idNum=
+			document.getElementById("idNum");
+			//获取元素节点的内容
+			//var idMsg=idNum.getAttribute("value");
+			var idMsg=idNum.value;//输入框输入的内容
+			//定义正则表达式
+			var reg=/^[a-zA-Z0-9]{1,10}$/;
+			//使用正则表达式进行验证
+			var result=reg.test(idMsg);
+			//通过id找到span元素节点
+			var s1=document.getElementById("s1");
+			if(result){  //格式正确的情况
+				s1.innerHTML="管理员账号格式正确";
+				s1.style.color="green";
+			}else{ //格式错误的情况
+				s1.innerHTML="格式错误";
+				s1.style.color="red";
+			}
+			return result;
+		}
+
+		//电话号码的验证
+		function checkTel(){
+			//获得输入框的元素节点
+			var tel=document.getElementById("tel");
+			//获取输入框的内容
+			var telMsg=tel.value;
+			//定义正则表达式
+			var reg=/^\d{3}-\d{8}$/;
+			//使用正则表达式对内容进行验证
+			var relt=reg.test(telMsg);
+			//获取span元素节点
+			var s2=document.getElementById("s2");
+			if(relt){
+				s2.innerHTML="电话正确";
+				s2.style.color="green";
+			}else{
+				s2.innerHTML="电话错误";
+				s2.style.color="red";
+			}
+			return relt;
+		}
+
+		//设置管理员账号输入框背景色的函数
+		/*
+		function setIdBck(){
+			//通过id找到元素节点
+			var idNum=
+			document.getElementById("idNum");
+			idNum.style.backgroundColor="yellow";
+		}
+		*/
+		//设置电话号码输入框背景色的函数
+		/*
+		function setTelBck(){
+			 var tel=document.getElementById("tel");
+			 tel.style.backgroundColor="yellow";
+		}
+		*/
+		//设置所有输入框背景色的函数
+		function setBck(a){
+			//管理员账号元素节点
+			var idNum= 
+			document.getElementById("idNum");
+			//电话号码元素节点
+            var tel=document.getElementById("tel");
+			if(a==1){
+				idNum.setAttribute("class","bck");
+			}
+			if(a==2){
+				tel.setAttribute("class","bck");
+			}
+		}
+
+		//验证表单是否能提交
+		function formSubmit(){
+			//当管理员账号和电话号码验证都通过时
+			//return true结果，否则return false。
+			//调用checkId函数，接收返回结果
+			var idResult=checkId();
+			//alert(idResult);
+			//调用checkTel函数，接收返回结果
+			var telResult=checkTel();
+			return idResult&&telResult;
+		}
+
+
+
+   </script>
+   <style>
+   	  /* class选择器，设置背景色为黄色  */
+	  .bck{
+	      background-color:yellow;
+	  }
+   </style>
+ </head>
+ <body>
+	<form>
+		管理员账号:
+		<input type="text" name="id" onblur="checkId();" id="idNum" 
+		onfocus="setBck(1);"/>
+		<span id="s1">10长度以内的字母、数字的组合</span>
+		<br/>
+		电话号码:
+		<input type="text" name="tel" onblur="checkTel();" id="tel"
+		onfocus="setBck(2);"/>
+		<span id="s2">例如:010-12345678</span>
+		<br/>
+		<input type="submit" value="提交" 
+		onclick="return formSubmit();"/>
+	</form>
+ </body>
+</html>

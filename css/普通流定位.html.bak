@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>普通流定位</title>
+ </head>  
+ <body>
+ 	<!--块标记-->
+    <h1>我是h1标记</h1>
+	<h2>我是h2标记</h2>
+	<p>我是p标记</p>
+	<div>我是div标记</div>
+	<hr/>
+	<!--行内标记-->
+	<span>我是span标记</span>
+	<a href="">我是超链接</a>
+ </body>
+</html>

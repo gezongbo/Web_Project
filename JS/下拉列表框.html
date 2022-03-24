@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>下拉列表框</title>
+	<script>
+		function f1(){
+			//通过id找到body体中的select节点
+			var s1=document.getElementById("s1");
+			//alert(s1.selectedIndex);
+			var opnArr=s1.options;
+			//opnArr是数组，存储了下拉框中所有的
+			//option对象
+			//alert(opnArr.length);//3
+			//alert(opnArr[0].innerHTML);
+			//alert(opnArr[1].innerHTML);
+			//alert(opnArr[2].innerHTML);
+			/*
+			alert(opnArr[0].getAttribute("value"));
+			alert(opnArr[1].value);
+			alert(opnArr[2].value);
+			*/
+			//创建一个潍坊option选项
+			var opn=new Option("潍坊","wf");
+			//将创建的option选项添加到下拉框中
+			s1.add(opn);
+		}
+	</script>
+ </head>
+ <body>
+ 	<!--
+      select  事件：onchange=""
+		      属性：selectedIndex 选项下标,从0开始
+			        options 下拉框中所有的option
+					        选项，这些选项放入数组中
+			  方法：add(option对象)
+			        往select下拉框中添加option选项
+	  option   创建：var xx=new Option(text,value);
+	                --text：每一个option选项内容
+					--value:每一个option选项的属性
+	-->
+ 	请选择城市:
+	<select id="s1" name="city" onchange="f1();">
+		<option value="qd">青岛</option>
+		<option value="yt">烟台</option>
+		<option value="jn">济南</option>
+	</select>
+ </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>时间段查询</title>
+	<script>
+		/*
+		//三天内执行的函数
+		function getThreeTime(){
+			alert("333");
+		}
+		//一周内执行的函数
+		function getWeekTime(){
+			alert("777");	
+		}
+		*/
+		//三天内和一周内执行的函数
+		//2022年3月8日-2022年3月10日
+		function getTime(days){
+			//alert(days); //3还是7
+			//1、获取当前系统时间
+			var now=new Date();
+			//当前系统时间也是时间段的结尾时间
+			var endStr=now.toLocaleDateString();
+			//alert(endStr);
+			var day=now.getDate()-days+1;
+			now.setDate(day);
+			//设置完成以后now表示的是时间段的开始
+			var startStr=now.toLocaleDateString();
+			var s="开始日期为："+startStr+"\n"
+			       +"结束日期为："+endStr;
+			alert(s);
+		}
+
+	</script>
+ </head>
+ <body>
+ 	<h2>订单时间段查询</h2>
+	<input type="radio" name="data" id="chkThree"
+	onclick="getTime(3);"/>
+	<label for="chkThree">三天内<label>
+
+	<input type="radio" name="data" id="chkWeek"
+	onclick="getTime(7);"/>
+	<label for="chkWeek">一周内</label>
+ </body>
+</html>
