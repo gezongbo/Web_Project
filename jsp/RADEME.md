@@ -1,80 +1,80 @@
-# 1��JSP����
+# 1、JSP介绍
  
 
->  JSP����SUN��˾�ṩ��̬web��Դ�Ŀ����������������ǳ�����HTML������JSP����������дjava���룬��HTML�ǲ����Եġ�����JSP��һ�ֶ�̬��ҳ����������
+>  JSP是由SUN公司提供动态web资源的开发技术，看起来非常的像HTML，但是JSP可以在里面写java代码，而HTML是不可以的。所以JSP是一种动态网页开发技术。
 
-> JSP�ĳ�����Ϊ�˽��Servlet����Ӧ��ҳ���ʱ���ʺ�������������⡣ HTML�ʺ���������ҳ�棬չʾ���ݣ�����HTML����������ҳ�汾���Ͼ���һ���ĵ����޷�չʾ��̬�����ݡ�  
+> JSP的出现是为了解决Servlet在响应到页面端时不适合往外输出的问题。 HTML适合用来开发页面，展示数据，但是HTML开发出来的页面本质上就是一个文档，无法展示动态的数据。  
 
-> JSP�ǳ��ʺϱ�дHTML���룬������Ϊ��Ӧҳ�����������ͬʱJSP�������дJava���룬����չʾ��̬���ݡ�   
+> JSP非常适合编写HTML代码，合适作为响应页面向外输出，同时JSP里面可以写Java代码，可以展示动态数据。   
 
-> Java Server Page  Java�������˵�һ��ҳ�漼��
+> Java Server Page  Java服务器端的一种页面技术
 
-# 2����дJSP�Լ�JSP���ĵ��ṹ
-##   1��дһ����.jspΪ��׺���ļ�
-## 2���ڸ��ļ��У����԰����������ݣ�
+# 2、编写JSP以及JSP的文档结构
+##   1）写一个以.jsp为后缀的文件
+## 2）在该文件中，可以包含如下内容：
    
  - HTML  CSS   JavaScript
- - Java����
- - ע��
- - ָ��
- - ��������
-# 3��JSPҳ���е�Java����
-   **Java�������д��jsp�ļ��е�����λ��
-   ���ַ�ʽ��**
-## ��1��jsp����ʽд��
-�﷨:  
+ - Java代码
+ - 注释
+ - 指令
+ - 隐含对象
+# 3、JSP页面中的Java代码
+   **Java代码可以写在jsp文件中的任意位置
+   两种方式：**
+## （1）jsp表达式写法
+语法:  
  
 
 ```java
- <%=������   %>
+ <%=………   %>
 ```
- ���ݣ��������������������ϵı���ʽ������ֵ���з���ֵ�ķ���
-      ���ܣ������������ҳ������ʾ�� =������Ĺ���
-## ��2��jsp�ű�Ƭ��д���������д����
-  �﷨:  
+ 内容：变量、变量加运算符组合的表达式、常量值、有返回值的方法
+      功能：将内容输出到页面上显示， =是输出的功能
+## （2）jsp脚本片段写法（代码块写法）
+  语法:  
 ```java
   	<% 
-              ����
-              ����
+              ……
+              ……
 	%>
 ```
-  ���ݣ�java�����Ƭ��
-  ���ܣ�ͨ��java�����Ƭ���һ��ҵ���߼��Ĺ���
-# 4��ָ�jsp����д����jsp������һ��д��jspҳ��Ŀ�ͷ��
+  内容：java代码的片段
+  功能：通过java代码的片完成一段业务逻辑的功能
+# 4、指令：jsp声明写法（jsp的声明一般写在jsp页面的开头）
    
 
 ```java
-	�﷨: <%@ָ����  ����1=ֵ1   ����2=ֵ2 ...  %>
+	语法: <%@指令名  属性1=值1   属性2=值2 ...  %>
 ```
 
-##  (1) pageָ��
+##  (1) page指令
 ```java
-	pageEncoding=��utf-8��   ����jsp�ļ�����ʱ�����ı���
-	import=����      ��jspҳ���µ���ʹ��
+	pageEncoding=”utf-8”   设置jsp文件保存时的中文编码
+	import=”” 在jsp页面章导包使用
 ```
-## ��2��includeָ��
+## （2）include指令
    
 
 ```java
-  	�﷨:   <%@include   file=��������ļ�.jsp��     %>
-  	���ܣ��ܹ��������ļ��������������԰���jsp�ļ���Ҳ���԰���html�ļ�
+  	语法:   <%@include   file=”引入的文件.jsp”     %>
+  	功能：能够将其它文件包含进来，可以包含jsp文件，也可以包含html文件
 ```
 
-## ��3��taglibָ��
+## （3）taglib指令
   
 
 ```java
-  	�﷨��<%@taglib   uri=����   prefix=����  %>
-  	���ܣ����������ǩ��   �� el����ʽ��jstl��׼��ǩ�⣩
+  	语法：<%@taglib   uri=””   prefix=””  %>
+  	功能：用来引入标签库   （ el表达式、jstl标准标签库）
 ```
 
-# 5��ע��
+# 5、注释
 
 ```java
-��1��<!--   ע������    -->
-       Htmlע�ͣ�ע���е��������������java���룬java����ע�Ͳ��ˣ���Щjava����ᱻִ�еġ�
-��2��<%--   ע������   --%>
-       Jspע�ͣ����ע�͵����ݰ�����java���룬�ᱻע�͵�
+（1）<!--   注释内容    -->
+       Html注释，注释中的内容如果包含了java代码，java代码注释不了，这些java代码会被执行的。
+（2）<%--   注释内容   --%>
+       Jsp注释，如果注释的内容包含了java代码，会被注释掉
 ```
 
 ```java
@@ -95,29 +95,29 @@
       <br/>
       <a href="http://www.baidu.com">to baidu</a>
       
-      <!-- jsp��дjava���룺jsp�ı���ʽд�� -->
+      <!-- jsp中写java代码：jsp的表达式写法 -->
       <br/>
-      <!-- ����ֵ -->
+      <!-- 常量值 -->
       <%=100   %>
       <%=3.14  %>
-      <!-- ��������д����ʽ -->
+      <!-- 配合运算符写表达式 -->
       <%=100+100 %>
       <%=3>1 %>
-      <!-- �з���ֵ�ķ��� -->
-               Բ����Ϊ��<%=Math.PI %>
+      <!-- 有返回值的方法 -->
+               圆周率为：<%=Math.PI %>
       <br/>
       <div style="font-size:50px">
-                          ������100��200���������ֵΪ��<%=Math.max(100,200)    %>
+                          两个数100和200，其中最大值为：<%=Math.max(100,200)    %>
       </div>
       
-      <!-- jsp��дjava���룺jsp�Ľű�Ƭ��д�� -->          
+      <!-- jsp中写java代码：jsp的脚本片段写法 -->          
       <%
           int a=2;
           int b;
           b=5;
-          //�����̨������
+          //向控制台输出结果
           System.out.println(a+b);
-          //��ҳ��������   out��JSPҳ�����������
+          //向页面输出结果   out是JSP页面的隐含对象
           out.println(a+b);
           for(int i=1;i<=10;i++){
         	  //out.write(i+"");
@@ -126,22 +126,22 @@
       %>
    
    	  <br/>
-      <!-- ���ñ�����ʹ��:�������a��b��ֵ -->
-      <!-- jsp�ı���ʽд�� -->
+      <!-- 调用变量来使用:输出变量a和b的值 -->
+      <!-- jsp的表达式写法 -->
       a=<%=a  %>
       b=<%=b  %>
       <br/>
-      <!-- jsp�Ľű�Ƭ��д�� -->
+      <!-- jsp的脚本片段写法 -->
       a=<%   out.println(a);   %>
       b=<%   out.println(b);   %>
    
       <br/>
-      <!-- ��ҳ������ʾ10��ȥ�ٶȵĳ����� -->
-      <a href="http://www.baidu.com">ȥ�ٶ�</a><br/>
+      <!-- 在页面中显示10个去百度的超链接 -->
+      <a href="http://www.baidu.com">去百度</a><br/>
       <%
           for(int i=1;i<=10;i++){
       %>
-        	  <a href="http://www.baidu.com">ȥ�ٶ�</a><br/>
+        	  <a href="http://www.baidu.com">去百度</a><br/>
         	  <div>hello</div>
       <%
           }
@@ -152,11 +152,11 @@
        		String s="aaa";
             StringBuffer sbuf=new StringBuffer();
             Date date=new Date();
-            //��ʱ���������ҳ��
+            //将时间输出在网页上
             out.println(date);
        %>
        <br/>
-                 ����1-100֮����������
+                 产生1-100之间的随机数：
        <%
             Random r=new Random();
             int num=r.nextInt(100)+1;
