@@ -13,3 +13,5 @@ insert into t_emp(name,salary,age) values('李四',10000.21,30);
 insert into t_emp(name,salary,age) values('王五',5000,27);
 insert into t_emp(name,salary,age) values('赵六',4003.6,60);
 select * from t_emp;
+
+select * from t_emp where id=3;

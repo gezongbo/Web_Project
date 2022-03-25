@@ -8,10 +8,37 @@
     <servlet-name>EmpListServlet</servlet-name>
     <servlet-class>com.lddx.web.EmpListServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>EmpAddServlet</servlet-name>
+    <servlet-class>com.lddx.web.EmpAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EmpSelectByServlet</servlet-name>
+    <servlet-class>com.lddx.web.EmpSelectByServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>EmpUpdateServlet</servlet-name>
+    <servlet-class>com.lddx.web.EmpUpdateServlet</servlet-class>
+  </servlet>
+
+
+
 
   <servlet-mapping>
     <servlet-name>EmpListServlet</servlet-name>
     <url-pattern>/list</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EmpAddServlet</servlet-name>
+    <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EmpSelectByServlet</servlet-name>
+    <url-pattern>/selectby</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EmpUpdateServlet</servlet-name>
+    <url-pattern>/update</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>
