@@ -32,14 +32,6 @@
 						欢迎!
 					</h1>
 					
-					<%
-					     ResultSet rs=(ResultSet)request.getAttribute("rs");
-					     //out.println("获得的结果集是："+rs);
-					     while(rs.next()){
-					    	 out.println(rs.getInt("id")+","+rs.getString("name"));
-					     }
-					%>
-					
 					<table class="table">
 						<tr class="table_header">
 							<td>
@@ -58,23 +50,35 @@
 								操作
 							</td>
 						</tr>
-						<tr class="row1">
-							<td>
-								1
-							</td>
-							<td>
-								zhangshan
-							</td>
-							<td>
-								20000
-							</td>
-							<td>
-								20
-							</td>
-							<td>
-								<a href="emplist.html">删除员工</a>&nbsp;<a href="updateEmp.html">修改员工</a>
-							</td>
-						</tr>
+						<%
+					     ResultSet rs=(ResultSet)request.getAttribute("rs");
+					     //out.println("获得的结果集是："+rs);
+					     int i=0;
+					     while(rs.next()){
+					    	 //out.println(rs.getInt("id")+","+rs.getString("name"));
+					    %>
+					    	 <tr class="row<%=i%2+1 %>">
+								<td>
+									<%=rs.getInt("id") %>
+								</td>
+								<td>
+									<%=rs.getString("name") %>
+								</td>
+								<td>
+									<%=rs.getDouble("salary") %>
+								</td>
+								<td>
+									<%=rs.getInt("age") %>
+								</td>
+								<td>
+									<a href="emplist.html">删除员工</a>&nbsp;<a href="selectby?id=<%=rs.getInt("id") %>">修改员工</a>
+								</td>
+							 </tr>
+						<% 
+						    i++;
+					     }
+					    %>
+						<!--  
 						<tr class="row2">
 							<td>
 								2
@@ -92,9 +96,10 @@
 								<a href="emplist.html">删除员工</a>&nbsp;<a href="updateEmp.html">修改员工</a>
 							</td>
 						</tr>
+						-->
 					</table>
 					<p>
-						<input type="button" class="button" value="添加员工" onclick="location='addEmp.html'"/>
+						<input type="button" class="button" value="添加员工" onclick="location='addEmp.jsp'"/>
 					</p>
 				</div>
 			</div>
