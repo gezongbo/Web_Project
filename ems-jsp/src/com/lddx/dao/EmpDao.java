@@ -85,7 +85,19 @@ public class EmpDao {
 		}
 	}
 	
-	
+	//根据id来删除一条数据的方法
+	public void deleteEmpById(int id){
+		try {
+			Connection con=DBUtil.getCon();
+			String sql="delete from t_emp where id=?";
+			PreparedStatement prep=con.prepareStatement(sql);
+			prep.setInt(1, id);
+			prep.executeUpdate();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
 	

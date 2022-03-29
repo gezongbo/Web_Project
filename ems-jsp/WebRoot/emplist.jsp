@@ -71,7 +71,7 @@
 									<%=rs.getInt("age") %>
 								</td>
 								<td>
-									<a href="emplist.html">删除员工</a>&nbsp;<a href="selectby?id=<%=rs.getInt("id") %>">修改员工</a>
+									<a href="delete?id=<%=rs.getInt("id") %>">删除员工</a>&nbsp;<a href="selectby?id=<%=rs.getInt("id") %>">修改员工</a>
 								</td>
 							 </tr>
 						<% 
