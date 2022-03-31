@@ -167,7 +167,7 @@
                     height: 50px;
                     background-color: pink;
                     /*设置定位模式：固定定位*/
-                    position: relative;
+                    position: fixed;
                     /*设置偏移量*/
                     left:200px;
                     top:30px;
