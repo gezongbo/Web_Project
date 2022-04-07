@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.lddx.bean.Book;
 import com.lddx.dao.BookDao;
@@ -28,6 +29,9 @@ public class BookListServlet extends HttpServlet {
 		//调用带分页查询的方法
 		ArrayList<Book> books=dao.getAllBooks(start, num);
 		//System.out.println(books);
+		//调用获取数据总条数的方法
+		int count=dao.getCountByBook();
+		int totalPages=count/num+1;  //总页数
 		
 		//将模型层查询的结果，交给视图层(booklist.jsp)显示
 		//将books集合放入request域中，books集合中存储的是分页查询的所有图书
@@ -36,6 +40,11 @@ public class BookListServlet extends HttpServlet {
 		request.setAttribute("page", page);
 		//将start表示的分页查询的下标放入request域中
 		request.setAttribute("start",start);
+		//将totalPages表示总页数放入request域中
+		//request.setAttribute("totalPages",totalPages);
+		//request域是一次请求中实现的资源共享，把totalPages放在session或者ServletContext域中
+		HttpSession session=request.getSession();
+		session.setAttribute("totalPages", totalPages);
 		request.getRequestDispatcher("booklist.jsp").forward(request, response);
 	}
 }

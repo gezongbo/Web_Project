@@ -12,7 +12,8 @@ public interface BookDao {
 	//分页查询d_book表中的图书   
 	//参数start是分页查询的下标，num是分页查询的数据个数
 	public ArrayList<Book> getAllBooks(int start,int num);
-
+	//获取d_book表中所有数据的条数
+	public int getCountByBook();
 	
 	
 }

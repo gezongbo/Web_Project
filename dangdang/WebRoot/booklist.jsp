@@ -26,8 +26,8 @@
 					<span class="head_welcome_text"> </span>
 					<span class="head_welcome_text"> <span class="little_n">
 							| <a href="login.html" name="mydangdang" class="head_black12a">登录</a> |
-							<a href="register.html" name="helpcenter" class="head_black12a"
-							target="_blank">注册</a> | </span> </span>
+							<a href="register.jsp" name="helpcenter" class="head_black12a"
+							target="_self">注册</a> | </span> </span>
 					<div class="cart gray4012">
 						<a href="cart.html">购物车</a>
 					</div>
@@ -67,13 +67,26 @@
 						</div>
 					</div>
 					<div style="text-align:center">
-						<a href="listpage?page=${page}&start=${start}&a=0">上一页</a>
+						<!-- page==1成立，说明是第1页，就不能在点上一页了 -->
+						<c:if test="${page==1}" var="f">
+							<span style="color:red">上一页</span>
+						</c:if>
+						<!-- !f说明page的值不等于1的情况 -->
+						<c:if test="${!f}">
+							<a href="listpage?page=${page}&start=${start}&a=0">上一页</a>
+						</c:if>
 						&nbsp;&nbsp;
-						第${page}页  下标${start}
+						第${page}页
 						&nbsp;&nbsp;
-						共X页
+						共${totalPages}页
 						&nbsp;&nbsp;
-						<a href="listpage?page=${page}&start=${start}&a=1">下一页</a>
+						<!-- 该条件如果成立，说明当前页和总多少页是一样的，已经到了最后一页 -->
+						<c:if test="${page==totalPages}" var="m">
+							<span style="color:red">下一页</span>
+						</c:if>
+						<c:if test="${!m}">
+							<a href="listpage?page=${page}&start=${start}&a=1">下一页</a>
+						</c:if>
 					</div>
 
 					<!--商品条目开始-->

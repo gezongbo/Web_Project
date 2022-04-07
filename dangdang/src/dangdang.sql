@@ -103,6 +103,9 @@ select * from d_book limit 10,5;
 select * from d_book limit 15,5;
 select * from d_book limit 20,5;
 select * from d_book limit 25,5;
+select count(*) from d_book;
+
+
 desc d_book;
 
 
@@ -142,7 +145,11 @@ CREATE TABLE d_user (
   PRIMARY KEY  (id),
   UNIQUE KEY email (email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+insert into d_user(email,nickname,password) values('abc@qq.com','张三','abc123');
+insert into d_user(email,nickname,password) values('ls@126.com','李四','123456');
 select * from d_user;
+select * from d_user where email='abc@qq.com';
+select * from d_user where email='123@qq.com';
 
 
 select * from d_order;

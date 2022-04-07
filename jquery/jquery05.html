@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+     <title>jquery框架中的toggle函数</title>
+	 <script type="text/javascript" src="jquery-1.4.3.js"></script>
+	 <script type="text/javascript">
+		//延迟加载函数
+		$(function(){
+			$("#d1").toggle(function(){
+				$("#d2").html("你点我了");
+				$("#d3").attr("src","images/t2.jpeg");
+			},function(){
+				$("#d2").html("别在点我了");
+				$("#d3").attr("src","images/t3.jpg");
+			},function(){
+				$("#d2").html("再点我和你拼命");
+				$("#d3").attr("src","images/t4.jpg");
+			});
+		});
+	 </script>
+ </head>
+ <body>
+     <input type="button" value="请点我" id="d1"/>
+	 <div id="d2"></div>
+	 <img src="images/t1.jpg" id="d3"/>
+ </body>
+</html>

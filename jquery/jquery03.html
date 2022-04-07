@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+     <title>jquery框架的属性控制</title>
+	 <script type="text/javascript" src="jquery-1.4.3.js"></script>
+	 <script type="text/javascript">
+		//延迟加载函数
+		$(function(){
+			//设置属性按钮
+			$("#setBtn").click(function(){
+				$("#d1").text("<em>HelloJQuery</em>");
+				$("#d2").html("<em>hellojquery</em>");   
+				$("#u1").val("你好");
+				$(".g1").attr("src","m.jpg").attr("title","这是一只可爱的小猫");
+			});
+			//获取属性按钮
+			$("#getBtn").click(function(){
+				//alert($("#d1").text());
+				var v1=$("#d2").text();
+				var v2=$("#d2").html();
+				//alert(v1+","+v2); //hellojquery,<em>hellojquery</em>
+				//alert($("#u1").val());
+				alert($("#setBtn").attr("type"));
+				alert($("#setBtn").attr("value"));
+			});
+			//输入框的离开焦点事件
+			$("#u1").blur(function(){
+				//获取输入框中输入的内容
+				var msg=$("#u1").val();
+				if(msg.length==0){
+					$("#s1").text("用户名不能为空");
+					$("#s1").css("color","red");
+				}else{
+					$("#s1").html("用户名可以使用").css("color","green");
+				}
+			});
+		});
+	 </script>
+ </head>
+ <body>
+    <input type="button" value="设置属性" id="setBtn"/>
+	<input type="button" value="获取属性" id="getBtn"/>
+	<div id="d1"></div>
+	<div id="d2"></div>
+	<input type="text" id="u1"/>
+	<span id="s1"></span>
+	<br/>
+	<img class="g1"/>
+ </body>
+</html>

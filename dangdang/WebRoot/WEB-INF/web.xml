@@ -12,6 +12,16 @@
     <servlet-name>BookListServletPage</servlet-name>
     <servlet-class>com.lddx.web.BookListServletPage</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>CodeImageServlet</servlet-name>
+    <servlet-class>com.lddx.web.CodeImageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CheckEmailServlet</servlet-name>
+    <servlet-class>com.lddx.web.CheckEmailServlet</servlet-class>
+  </servlet>
+
+
 
 
   <servlet-mapping>
@@ -21,6 +31,14 @@
   <servlet-mapping>
     <servlet-name>BookListServletPage</servlet-name>
     <url-pattern>/listpage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CodeImageServlet</servlet-name>
+    <url-pattern>/codeimage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckEmailServlet</servlet-name>
+    <url-pattern>/checkemail</url-pattern>
   </servlet-mapping>
   
   

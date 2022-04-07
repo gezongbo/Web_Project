@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+     <title>jquery框架中的事件</title>
+	 <script type="text/javascript" src="jquery-1.4.3.js"></script>
+	 <script type="text/javascript">
+		//js写法
+		function f1(){
+			alert("你好");
+		}
+
+		//jquery写法
+		$(function(){
+			$("#b1").click(function(){
+				alert("hello");
+			});
+		});
+	 </script>
+ </head>
+ <body>
+    <input type="button" value="点我" onclick="f1()"/>
+	<br/>
+	<br/>
+	<input type="button" value="确定" id="b1"/>
+ </body>
+</html>

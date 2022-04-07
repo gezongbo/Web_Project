@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+     <title>jquery框架的使用</title>
+	 <script type="text/javascript" src="jquery-1.4.3.js"></script>
+	 <script type="text/javascript">
+		//jquery框架的代码
+		//使用jquery框架完成对样式的控制
+		//延迟加载函数
+		$(function(){
+			//jquery框架完成的
+			$("#d2").css("color","green")
+			        .css("font-size","30px")
+					.css("font-family","楷体")
+					.css("text-align","center");	
+			//js完成，对p标记中的内容进行样式的修改
+			var d3=document.getElementById("d3");
+			d3.style.color="blue";
+		});
+	 </script>
+	 
+	 <style>
+		#d1{
+			color:red;
+			font-size:50px;
+		}
+	 </style>
+ </head>
+ <body>
+     <p id="d3">这是一个段落标记</p>
+	 <p class="c1" id="d1">我是一个段落标记1</p>
+	 <div id="d2">这是一个div标记</div>
+ </body>
+</html>

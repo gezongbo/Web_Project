@@ -77,8 +77,10 @@ public class BookDaoImpl implements BookDao{
 			//循环从结果集中依次取出23本图书，封装到Book类中，最后放到集合中
 			while(rs.next()){
 				Book b=new Book();
-				b.setId(rs.getInt("id"));
-				b.setProductName(rs.getString("product_name"));
+				//b.setId(rs.getInt("id"));
+				b.setId(rs.getInt(1));
+				//b.setProductName(rs.getString("product_name"));
+				b.setProductName(rs.getString(2));
 				b.setDescription(rs.getString("description"));
 				b.setFixedPrice(rs.getDouble("fixed_price"));
 				b.setDangPrice(rs.getDouble("dang_price"));
@@ -105,4 +107,39 @@ public class BookDaoImpl implements BookDao{
 		return books;
 	}
 
+	//获取d_book表中所有数据的条数
+	public int getCountByBook() {
+		int count=0;  //数据的条数，初始值为0
+		try {
+			//获得数据库的连接
+			Connection con=DBUtil.getCon();
+			//预编译sql语句
+			String sql="select count(*) from d_book";
+			PreparedStatement prep=con.prepareStatement(sql);
+			//执行sql语句
+			ResultSet rs=prep.executeQuery();
+			if(rs.next()){
+				//从结果集中取出第1列的数据
+				count=rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
