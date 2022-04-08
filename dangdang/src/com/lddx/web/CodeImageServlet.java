@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.lddx.util.CodeUtil;
 import com.sun.image.codec.jpeg.JPEGCodec;
@@ -43,6 +44,9 @@ public class CodeImageServlet extends HttpServlet {
 		//int number=r.nextInt(999999);//0-999998
 		//String strCode=CodeUtil.createCode();
 		String strCode=CodeUtil.createCode1();
+		//获取session，把生成的验证码存储到session中
+		HttpSession session=request.getSession();
+		session.setAttribute("strCode",strCode);
 		//设置画笔的颜色为黑色
 		g.setColor(Color.black);
 		//g.drawString(number+"",10,15);

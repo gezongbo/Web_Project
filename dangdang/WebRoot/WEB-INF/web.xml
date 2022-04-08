@@ -20,6 +20,21 @@
     <servlet-name>CheckEmailServlet</servlet-name>
     <servlet-class>com.lddx.web.CheckEmailServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>CheckCodeServlet</servlet-name>
+    <servlet-class>com.lddx.web.CheckCodeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.lddx.web.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.lddx.web.LoginServlet</servlet-class>
+  </servlet>
+
+
+
 
 
 
@@ -39,6 +54,18 @@
   <servlet-mapping>
     <servlet-name>CheckEmailServlet</servlet-name>
     <url-pattern>/checkemail</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckCodeServlet</servlet-name>
+    <url-pattern>/checkcode</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
   </servlet-mapping>
   
   

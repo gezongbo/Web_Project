@@ -150,6 +150,7 @@ insert into d_user(email,nickname,password) values('ls@126.com','李四','123456
 select * from d_user;
 select * from d_user where email='abc@qq.com';
 select * from d_user where email='123@qq.com';
+select * from d_user where email='abc@qq.com' and password='abc123';
 
 
 select * from d_order;

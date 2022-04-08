@@ -22,7 +22,7 @@
 			<span class="red_bold">1.填写信息</span> &gt; 2.注册成功
 		</div>
 		<div class="fill_message">
-			<form name="ctl00" method="post" action="regist" id="f">
+			<form name="ctl00" method="post" action="register" id="f">
 				<h2>
 					以下均为必填项
 				</h2>
@@ -108,7 +108,7 @@
 					</tr>
 				</table>
 				<div class="login_in">
-					<input type="submit" id="btnClientRegister" class="button_1" value="注册">
+					<input type="submit" id="btnClientRegister" class="button_1" value="注册" disabled="disabled">
 				</div>
 			</form>
 		</div>
