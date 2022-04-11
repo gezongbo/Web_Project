@@ -32,6 +32,11 @@
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>com.lddx.web.LoginServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.lddx.web.LogoutServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -66,6 +71,10 @@
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
   </servlet-mapping>
   
   

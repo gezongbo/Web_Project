@@ -24,10 +24,32 @@
 			<div class="head_welcome">
 				<div class="head_welcome_right">
 					<span class="head_welcome_text"> </span>
-					<span class="head_welcome_text"> <span class="little_n">
-							| <a href="login.html" name="mydangdang" class="head_black12a">登录</a> |
-							<a href="register.jsp" name="helpcenter" class="head_black12a"
-							target="_self">注册</a> | </span> </span>
+					<span class="head_welcome_text"> 
+						<!-- 用户没有登录的情况显示：|登录|注册| -->
+						<!-- 用户登录的情况显示：|亲，欢迎xxxx|退出| -->
+						<!-- 根据${user}结果，如果结果为null，说明没有登录过，显示登录，注册
+						                                                 如果结果不为null，说明是登录过的，显示欢迎xxx，退出
+						             可以使用jstl标准标签库中的c:if，也可以使用c:choose
+						 -->
+						 <c:choose>
+						 	<%-- user为null的情况 --%>
+						 	<c:when test="${empty user}">
+						 		<span class="little_n">
+									| <a href="login.jsp" name="mydangdang" class="head_black12a">登录</a> |
+									<a href="register.jsp" name="helpcenter" class="head_black12a"
+									target="_self">注册</a> | 
+								</span>
+						 	</c:when>	
+						 	<%-- user不为null的情况 --%>
+						 	<c:otherwise>
+						 		<span class="little_n">
+									| 亲，欢迎${user.nickname} |
+									<a href="logout" name="helpcenter" class="head_black12a"
+									target="_self">退出</a> | 
+								</span>
+						 	</c:otherwise>
+						 </c:choose>	 
+					</span>
 					<div class="cart gray4012">
 						<a href="cart.html">购物车</a>
 					</div>

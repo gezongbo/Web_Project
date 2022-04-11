@@ -14,4 +14,11 @@ public interface UserDao {
 	//insert into d_user values(???....);
 	public void saveUser(User user);
 	
+	//是否可以登录功能：select * from d_user where email='abc@qq.com' and password='abc123';
+	//public boolean isLogin(String email,String password);
+	//User返回的如果是null，说明邮箱或者密码不正确；
+	//User返回的不是null，说明邮箱和密码是正确的
+	public User isLogin(String email,String password);
+	
+	
 }

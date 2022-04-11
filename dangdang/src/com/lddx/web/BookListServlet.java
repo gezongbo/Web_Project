@@ -17,7 +17,7 @@ import com.lddx.dao.impl.BookDaoImpl;
 //完成核心功能：当当网首页图书查询、显示的功能
 //BookListServlet定义为当当网的首页，当当网显示第1页的前5条数据
 public class BookListServlet extends HttpServlet {
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
+	public void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		//请求发送过来以后，调用模型层，由模型层完成图书的查询功能
 		BookDao dao=new BookDaoImpl();

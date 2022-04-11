@@ -60,6 +60,34 @@ public class UserDaoImpl implements UserDao{
 		}
 	}
 
+	//是否可以登录功能：select * from d_user where email='abc@qq.com' and password='abc123';
+	//public boolean isLogin(String email,String password);
+	//User返回的如果是null，说明邮箱或者密码不正确；
+	//User返回的不是null，说明邮箱和密码是正确的
+	public User isLogin(String email, String password) {
+		User user=null;
+		try {
+			//获得数据库的连接
+			Connection con=DBUtil.getCon();
+			//预编译sql语句
+			String sql="select * from d_user where email=? and password=?";
+			PreparedStatement prep=con.prepareStatement(sql);
+			prep.setString(1, email);
+			prep.setString(2, password);
+			//执行sql语句
+			ResultSet rs=prep.executeQuery();
+			if(rs.next()){
+				user=new User();
+				user.setNickname(rs.getString("nickname"));
+			}
+			//关闭连接
+			DBUtil.close(rs, prep, con);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return user;
+	}
+
 	
 	
 	

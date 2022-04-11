@@ -7,9 +7,17 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link href="css/login.css" rel="stylesheet" type="text/css" />
 		<link href="css/page_bottom.css" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src="js/jquery-1.4.min.js"></script>
-		<script type="text/javascript" src="js/verify.js"></script>
-		<script type="text/javascript" src="js/loginFormValidate.js"></script>
+		<script type="text/javascript" src="js/jquery-1.4.3.js"></script>
+		<script type="text/javascript">
+			//错误信息3秒后消失
+			$(function(){
+				//定时器
+				window.setInterval(function(){
+					$("#errorMsg").text("");
+				},3000);
+			});
+		</script>
+
 	</head>
 	<body>
 		<div class="login_top">
@@ -69,6 +77,8 @@
 								</li>
 							</ul>
 						</form>
+						<!-- 显示错误信息 -->
+						<div style="color:red" id="errorMsg">${msg}</div>
 					</div>
 					<div class="user_new">
 						<p>
