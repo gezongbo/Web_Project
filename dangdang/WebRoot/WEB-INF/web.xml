@@ -36,6 +36,26 @@
     <servlet-name>LogoutServlet</servlet-name>
     <servlet-class>com.lddx.web.LogoutServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>BuyServlet</servlet-name>
+    <servlet-class>com.lddx.web.BuyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>com.lddx.web.CartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CartDeleteServlet</servlet-name>
+    <servlet-class>com.lddx.web.CartDeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CartUpdateServlet</servlet-name>
+    <servlet-class>com.lddx.web.CartUpdateServlet</servlet-class>
+  </servlet>
+
+
+
+
 
 
 
@@ -75,6 +95,22 @@
   <servlet-mapping>
     <servlet-name>LogoutServlet</servlet-name>
     <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BuyServlet</servlet-name>
+    <url-pattern>/buy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/cart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CartDeleteServlet</servlet-name>
+    <url-pattern>/cartdelete</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CartUpdateServlet</servlet-name>
+    <url-pattern>/cartupdate</url-pattern>
   </servlet-mapping>
   
   

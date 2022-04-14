@@ -14,6 +14,8 @@ public interface BookDao {
 	public ArrayList<Book> getAllBooks(int start,int num);
 	//获取d_book表中所有数据的条数
 	public int getCountByBook();
+	//根据id查询对应的图书的信息  select * from d_book where id=?
+	public Book getBookById(int id);
 	
 	
 }

@@ -104,6 +104,7 @@ select * from d_book limit 15,5;
 select * from d_book limit 20,5;
 select * from d_book limit 25,5;
 select count(*) from d_book;
+select * from d_book where id=2;
 
 
 desc d_book;

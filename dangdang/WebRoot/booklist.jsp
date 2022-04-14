@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<title>当当图书 – 全球最大的中文网上书店</title>
- 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<link href="css/book.css" rel="stylesheet" type="text/css" />
 		<link href="css/second.css" rel="stylesheet" type="text/css" />
 		<link href="css/secBook_Show.css" rel="stylesheet" type="text/css" />
@@ -12,6 +12,34 @@
 		<link href="css/book_head090107.css" rel="stylesheet"
 			type="text/css" />
 		<link href="css/public_footer.css" rel="stylesheet" type="text/css" />
+		<!-- 引入jquery框架 -->
+		<script type="text/javascript" src="js/jquery-1.4.3.js"></script>
+		<!-- 自己写的jquery代码，来实现具体哪个功能的 -->
+		<script type="text/javascript">
+			//延迟加载函数
+			$(function(){
+				$(".buyImg").click(function(){
+					var id=$(this).attr("id");
+					//思路：1、使用ajax访问服务器端
+					//    2、让服务器端来完成购买的功能，也就是将书的信息添加到购物车里面
+					//    3、购物车需要选择一个域对象在服务器端存储，session域对象来存储购物车
+					$.ajax({
+						type:"get",
+						url:"buy",
+						data:{idData:id},
+						success:function(msg){
+							if(msg==0){
+								//alert("购买成功");
+								$("#cartInfo_"+id).html("购买成功").css("color","green");
+							}else if(msg==-1){
+								//alert("您已经购买过该图书了，请到购物车中查看");
+								$("#cartInfo_"+id).html("您已经购买过图书了").css("color","red");
+							}
+						}
+					});
+				});
+			});
+		</script>
 	</head>
 	<body>
 
@@ -51,7 +79,7 @@
 						 </c:choose>	 
 					</span>
 					<div class="cart gray4012">
-						<a href="cart.html">购物车</a>
+						<a href="cart">购物车</a>
 					</div>
 				</div>
 			</div>
@@ -148,10 +176,10 @@
 							<span class="del">定价${b.fixedPrice}</span>
 							<span class="red">当当价${b.dangPrice}</span> 节省：￥${b.saveMoney}
 						</h6>
-						<span class="list_r_list_button"> <img align="top"
-								src='images/buttom_goumai.gif'
-								onclick="javascript:window.location.href='cart.html'" /> </span>
-						<span id="cartInfo_1"></span>
+						<span class="list_r_list_button"> 
+						    <img align="top" src='images/buttom_goumai.gif' class="buyImg" id="${b.id}"/> 
+						</span>
+						<span id="cartInfo_${b.id}"></span>
 					  </div>
 					</c:forEach>
 

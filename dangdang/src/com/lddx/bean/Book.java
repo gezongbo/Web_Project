@@ -114,8 +114,8 @@ public class Book {
 				+ ", description=" + description + ", fixedPrice=" + fixedPrice
 				+ ", id=" + id + ", productName=" + productName
 				+ ", productPic=" + productPic + ", publishTime=" + publishTime
-				+ ", publishing=" + publishing + "]";
-				*/
+				+ ", publishing=" + publishing + "]";*/
+				
 		return "["+id+"-"+productName+"]";
 	}
 	

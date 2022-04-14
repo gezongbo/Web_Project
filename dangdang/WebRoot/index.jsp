@@ -1,4 +1,6 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@page import="com.lddx.bean.Cart"%>
+<%@page import="com.lddx.bean.BookItem"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -22,5 +24,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     This is my JSP page. <br>
+    <%
+    	Cart cart=(Cart)session.getAttribute("cart");
+    	ArrayList<BookItem> itemList=cart.getItemList();
+    	out.println(itemList);
+    %>
+    
+    
+    
   </body>
 </html>

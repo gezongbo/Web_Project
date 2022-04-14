@@ -128,6 +128,47 @@ public class BookDaoImpl implements BookDao{
 		return count;
 	}
 
+	//根据id查询对应的图书的信息  select * from d_book where id=?
+	public Book getBookById(int id) {
+		Book b=new Book();
+		try {
+			//获得数据库的连接s
+			Connection con=DBUtil.getCon();
+			//预编译sql语句
+			String sql="select * from d_book where id=?";
+			PreparedStatement prep=con.prepareStatement(sql);
+			prep.setInt(1, id);
+			//执行sql语句
+			ResultSet rs=prep.executeQuery();
+			if(rs.next()){
+				//如果结果集中有数据，将结果集中的数据取出来封装到book中
+				b.setId(rs.getInt(1));
+				//b.setProductName(rs.getString("product_name"));
+				b.setProductName(rs.getString(2));
+				b.setDescription(rs.getString("description"));
+				b.setFixedPrice(rs.getDouble("fixed_price"));
+				b.setDangPrice(rs.getDouble("dang_price"));
+				//double saveMon=rs.getDouble("fixed_price")-rs.getDouble("dang_price");
+				double saveMon=b.getFixedPrice()-b.getDangPrice();
+				DecimalFormat df=new DecimalFormat("#.##");
+				String strSave=df.format(saveMon);
+				//System.out.println("strSave="+strSave);
+				b.setSaveMoney(Double.parseDouble(strSave));
+				b.setProductPic(rs.getString("product_pic"));
+				b.setAuthor(rs.getString("author"));
+				b.setPublishing(rs.getString("publishing"));
+				long time=rs.getLong("publish_time");
+				Date date=new Date(time);
+				SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+				String strDate=sdf.format(date);
+				b.setPublishTime(strDate);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return b;
+	}
+
 }
 
 
