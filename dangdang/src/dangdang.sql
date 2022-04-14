@@ -153,7 +153,17 @@ select * from d_user where email='abc@qq.com';
 select * from d_user where email='123@qq.com';
 select * from d_user where email='abc@qq.com' and password='abc123';
 
-
+drop table if exists d_address;
+create table d_address(
+	id int(12) not null auto_increment,
+	receive_name varchar(50) not null,
+	full_address varchar(50) not null,
+	postal_code int(12) not null,
+	phone varchar(50),
+	mobile long not null,
+	primary key (id)            
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+select * from d_address;
 
 select * from d_order;
 select * from d_item;

@@ -176,8 +176,8 @@
 							<span class="del">定价${b.fixedPrice}</span>
 							<span class="red">当当价${b.dangPrice}</span> 节省：￥${b.saveMoney}
 						</h6>
-						<span class="list_r_list_button"> 
-						    <img align="top" src='images/buttom_goumai.gif' class="buyImg" id="${b.id}"/> 
+						<span class="list_r_list_button">
+						    <img align="top" src='images/buttom_goumai.gif' class="buyImg" id="${b.id}"/>
 						</span>
 						<span id="cartInfo_${b.id}"></span>
 					  </div>

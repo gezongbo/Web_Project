@@ -52,6 +52,16 @@
     <servlet-name>CartUpdateServlet</servlet-name>
     <servlet-class>com.lddx.web.CartUpdateServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>OrderServlet</servlet-name>
+    <servlet-class>com.lddx.web.OrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddressServlet</servlet-name>
+    <servlet-class>com.lddx.web.AddressServlet</servlet-class>
+  </servlet>
+
+
 
 
 
@@ -111,6 +121,14 @@
   <servlet-mapping>
     <servlet-name>CartUpdateServlet</servlet-name>
     <url-pattern>/cartupdate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderServlet</servlet-name>
+    <url-pattern>/order</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddressServlet</servlet-name>
+    <url-pattern>/address</url-pattern>
   </servlet-mapping>
   
   

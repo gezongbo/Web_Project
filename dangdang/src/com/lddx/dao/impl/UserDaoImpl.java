@@ -79,6 +79,9 @@ public class UserDaoImpl implements UserDao{
 			if(rs.next()){
 				user=new User();
 				user.setNickname(rs.getString("nickname"));
+				user.setId(rs.getInt("id"));
+				user.setEmail(rs.getString("email"));
+				user.setPassword(rs.getString("password"));
 			}
 			//πÿ±’¡¨Ω”
 			DBUtil.close(rs, prep, con);

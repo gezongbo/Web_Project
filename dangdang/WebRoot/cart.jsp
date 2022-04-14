@@ -165,8 +165,8 @@
 							</span>
 						</div>
 						<div id="balance" class="balance">
-							<a name='checkout' href='order/toOrder.action'> <img
-									src="images/butt_balance.gif" alt="结算" border="0" title="结算" />
+							<a name='checkout' href='order'> 
+								<img src="images/butt_balance.gif" title="结算" border="0" title="结算" />
 							</a>
 						</div>
 					</div>
