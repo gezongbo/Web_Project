@@ -9,7 +9,6 @@ CREATE TABLE d_book (
   fixed_price double NOT NULL,
   dang_price double NOT NULL,
   product_pic varchar(200) default NULL,
-  
   author varchar(200) NOT NULL,
   publishing varchar(200) NOT NULL,
   publish_time long NOT NULL,
@@ -122,7 +121,7 @@ CREATE TABLE d_item (
   amount double NOT NULL,
   PRIMARY KEY  (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
+select * from d_item;
 
 
 
@@ -131,10 +130,11 @@ CREATE TABLE d_order (
   id int(10) NOT NULL auto_increment,
   user_id int(10) NOT NULL,
   order_time long NOT NULL,
-  order_desc varchar(100) default NULL,
+  order_id int not null,
   total_price double NOT NULL,
   PRIMARY KEY  (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+select * from d_order;
 
 
 DROP TABLE IF EXISTS d_user;
@@ -163,8 +163,10 @@ create table d_address(
 	mobile long not null,
 	primary key (id)            
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 select * from d_address;
 
 select * from d_order;
+
 select * from d_item;
 
