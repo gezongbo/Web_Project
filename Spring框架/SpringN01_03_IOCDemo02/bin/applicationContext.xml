@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd ">
+
+	<!-- id的方式获取 -->
+	<!-- class的方式获取 -->
+	<bean id="person1" class="com.lddx.bean.Person"></bean>
+	
+	<!-- class方式获取有潜在风险，class属性的值可能会一样 -->
+	<bean id="person2" class="com.lddx.bean.Person"></bean>
+	
+	<!-- 通过别名来获取
+		 name=""   对哪个id的值来定义别名
+		 alias=""  定义别名
+	 -->
+	<alias name="person1" alias="per1"/>
+
+</beans>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd "
+	default-lazy-init="true" >
+
+	<!-- 配置Cart类，因为Cart类中有无参构造方法，可以使用无参构造的方式创建Cart类
+	             默认是单例模式
+	 -->
+	 <!-- 
+	<bean id="cart" class="com.lddx.bean.Cart"></bean>
+	 -->
+	<!--   底层： 
+	       Cart c=new Cart();
+	       Map.put("cart",c);
+	 -->
+	 
+	 
+	 <!-- 配置Cart类，使用多例模式配置 -->
+	 <bean id="cart" class="com.lddx.bean.Cart" scope="prototype"></bean>
+	 
+	 
+	 <!-- 配置Person类使用无参构造的方式，单例模式，懒加载 -->
+	 <bean id="person" class="com.lddx.bean.Person" scope="singleton" lazy-init="default"></bean>
+	 
+	 
+	 <!-- 配置Teacher类，采用无参构造的方式，单例模式(默认)  -->
+	 <bean id="teacher" class="com.lddx.bean.Teacher" lazy-init="default"></bean>
+	 
+	 
+	 <!-- 配置Student类，研究Spring容器的初始化和销毁 -->
+	 <!-- 默认：单例模式、不懒加载 -->
+	 <bean id="student" class="com.lddx.bean.Student" lazy-init="false" init-method="myInitFunc"
+	 destroy-method="myDestoryFunc"></bean>
+	 
+
+
+
+
+
+</beans>
