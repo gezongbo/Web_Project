@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd ">
+
+	<!-- 配置Hero类 -->
+	<bean id="hero" class="com.lddx.bean.Hero">
+		<!-- 使用set方式进行依赖注入 -->
+		<property name="name" value="亚瑟"></property>
+		<property name="age" value="70"></property>
+		<property name="jobs">
+			<list>
+				<value>边路</value>
+				<value>辅助</value>
+				<value>打野</value>
+				<value>打野</value>
+			</list>
+		</property>
+		<property name="skills">
+			<set>
+				<value>sk1</value>
+				<value>sk2</value>
+				<value>sk3</value>
+			</set>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="k1" value="v1"></entry>
+				<entry key="k2" value="v2"></entry>
+			</map>
+		</property>
+		<property name="prop">
+			<props>
+				<prop key="username">root</prop>
+				<prop key="password">abc123</prop>
+			</props>
+		</property>
+		<property name="dog" ref="d"></property>
+		<property name="cat" ref="cat"></property>
+	</bean>
+	<!-- 底层：Hero hero=new Hero();
+	         10行的配置等价于底层：hero.setName("亚瑟");
+	         Map.put("hero",hero);
+	 -->
+	 
+	 <!-- 配置Dog类 -->
+	 <bean id="d" class="com.lddx.bean.Dog">
+	 	<!-- DI中的set依赖注入 -->
+	 	<property name="name" value="旺财"></property>
+	 	<property name="age" value="3"></property>
+	 </bean>
+	 <!-- 底层：Dog dog=new Dog();
+	          dog.setName("旺财");
+	          dog.setAge(3);
+	 		  Map.put("d",dog);
+	  -->
+
+	<!-- 配置Cat类 -->
+	<bean id="cat" class="com.lddx.bean.Cat">
+		<!-- DI set依赖注入 -->
+		<property name="name" value="汤姆"></property>
+		<property name="age" value="2"></property>
+	</bean>
+
+
+
+</beans>

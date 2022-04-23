@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd ">
+
+	<!-- 配置Hero类   使用构造方法的方式进行依赖注入 -->
+	<bean id="hero" class="com.lddx.bean.Hero">
+		<!-- DI 构造方法注入 -->
+		<!-- 
+			index="" 下标位置，表示Hero类的构造方法中参数的下标位置，下标从0开始		
+			name=""  表示构造方法中参数名
+			index和name可以都写，也可以只写一个
+			type=""  参数的类型
+			value="" 赋值的内容
+		 -->
+		<constructor-arg index="0" name="name" type="String" value="后裔"></constructor-arg>
+		<constructor-arg index="1" name="age" type="int" value="10"></constructor-arg>
+		<constructor-arg index="2"  type="java.util.List">
+			<list>
+				<value>边路</value>
+				<value>中路</value>
+				<value>打野</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg index="3" type="com.lddx.bean.Dog" ref="dog"></constructor-arg>
+		<property name="cat" ref="cat"></property>
+	</bean>
+	<!-- 配置Dog类 -->
+	<bean id="dog" class="com.lddx.bean.Dog">
+		<!-- 选择使用set注入，也可以选择使用构造方法注入 -->
+		<constructor-arg index="0" type="String" value="大黄"></constructor-arg>
+		<!--  
+		<constructor-arg name="age" type="int" value="3"></constructor-arg>
+		-->
+		<property name="age" value="4"></property>
+		<!-- 使用依赖注入对属性赋值，set注入和构造方法注入可以混合使用，但是要保证类中构造方法匹配构造方法注入 -->
+	</bean>
+	<!-- 配置Cat类 -->
+	<bean id="cat" class="com.lddx.bean.Cat">
+		<property name="name" value="小花猫"></property>
+		<property name="age" value="1"></property>
+	</bean>
+</beans>
+
+
+
+
+
+
+
+
+
