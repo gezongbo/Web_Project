@@ -1,0 +1,106 @@
+<html>
+    <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>电子相册</title>
+	<script type="text/javascript">
+		var num=1;
+		var timer
+		
+		function rotateFunc(){
+			var img=document.getElementById('image');
+				//img.setAttribute("src","2.jpg")
+				img.src="image\\"+num+".jpg";
+				if(num<10){
+					num=num+1;
+				}
+				else{
+					num=num%10+1;
+				}
+		}
+		function startRotate(){
+			//创建周期性定时器
+			timer=window.setInterval(rotateFunc,1000);
+
+		}
+		function stopRotate(){
+			window.clearInterval(timer);
+		}
+      
+		function next_image(){
+            var img=document.getElementById('image');
+            if(num<10){
+					num=num+1;
+				}
+				else{
+					num=num%10+1;
+				}
+            img.src="image\\"+num+".jpg";
+            var s1=document.getElementById("s1");
+            s1.value=num;
+        }
+        function list_change_image(){
+            var img=document.getElementById('image');
+            var option_arr=s1.options;
+            num=s1.selectedIndex+1
+            img.src="image\\"+num+".jpg";           
+        }
+        function up_image(){
+            var img=document.getElementById('image');
+            var a=document.getElementById('a1');
+				if(num>1){
+					num=num-1;
+				}
+				else{
+					num=10;
+				}
+            img.src="image\\"+num+".jpg";
+            a.href="image\\"+num+".jpg";
+            var s1=document.getElementById("s1");
+            s1.value=num;
+        }
+        function down_image(){
+            var img=document.getElementById('image');
+            var a=document.getElementById('a1');
+            if(num<10){
+					num=num+1;
+				}
+				else{
+					num=num%10+1;
+				}
+            img.src="image\\"+num+".jpg";
+            a.href="image\\"+num+".jpg";
+            var s1=document.getElementById("s1");
+            s1.value=num;
+        }
+	</script>
+    </head>
+    <body>
+        <center><h1>我的电子相册</h1></center>
+	    <center>
+            <img src="image\1.jpg" width="800" height="500" id="image" 
+            onmouseover="startRotate();" onmouseout="stopRotate();">
+            <img  src="image\jd.jpg" width="30" height="100" id="jd"
+            onclick="next_image();">
+
+        </center>
+       <center>
+        <a href="image\\10.jpg" target="_blank" id="a1" onclick="up_image();">上一张</a>
+        <select id="s1" onchange="list_change_image();">
+            <option value="id" id="image_name">请选择图片</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <a href="image\\2.jpg" target="_blank" id="a2" onclick="down_image();">下一张</a>
+        </center>
+
+    </body>
+</html>
